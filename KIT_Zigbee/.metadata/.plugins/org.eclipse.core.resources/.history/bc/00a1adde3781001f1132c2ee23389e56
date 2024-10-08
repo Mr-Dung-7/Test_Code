@@ -1,0 +1,17 @@
+/*
+ * main.h
+ *
+ *  Created on: Sep 25, 2024
+ *      Author: Mr.hDung
+ */
+
+#ifndef SOURCE_APP_MAIN_H_
+#define SOURCE_APP_MAIN_H_
+
+#include "app/framework/include/af.h"
+#include "Source/Mid/UART/UART.h"
+
+void USER_Usart2RxHandle (USART_FRAME UartRxFrame);
+
+
+#endif /* SOURCE_APP_MAIN_H_ */

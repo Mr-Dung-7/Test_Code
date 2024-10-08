@@ -1,0 +1,225 @@
+/*
+ * USART.c
+ *
+ *  Created on: Sep 25, 2024
+ *      Author: Mr.hDung
+ */
+
+/******************************************************************************/
+/*                                INCLUDEs                                    */
+/******************************************************************************/
+#include "Source/Mid/USART/USART.h"
+
+/******************************************************************************/
+/*                                 DEFINEs                                    */
+/******************************************************************************/
+
+/******************************************************************************/
+/*                            STRUCTs AND ENUMs                               */
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*                       EVENTs AND GLOBAL VARIABLEs                          */
+/******************************************************************************/
+EmberEventControl processSerialEventControl;
+EmberEventControl usart2ScanEventControl;
+
+UsartFrameCallback usart2FrameCB = NULL;
+UsartStateCallback usart2StateCB = NULL;
+
+
+// Received data storage array
+uint8_t 		g_strRxBuffer[RX_BUFFER_SIZE] = {0};
+
+/******************************************************************************/
+/*                           FUNCTIONs  PROTOTYPE                             */
+/******************************************************************************/
+
+
+/******************************************************************************/
+/*                               FUNCTIONs                              	  */
+/******************************************************************************/
+
+
+void USART2_Init (UsartStateCallback cb)
+{
+	//usart2: Tx: PC01
+	//usart2: Rx: PC02
+
+	emberSerialInit(COM_USART2, 115200, PARITY_NONE, 1);
+
+	usart2StateCB = cb;
+
+	emberEventControlSetDelayMS(usart2ScanEventControl, 100);
+	emberEventControlSetDelayMS(processSerialEventControl, 200);
+}
+
+
+
+// Dinh ky lay so luong byte duoc nhan
+void usart2ScanEventHandler(void)
+{
+	emberEventControlSetInactive(usart2ScanEventControl);
+
+	uint8_t 	dataByte;
+	uint16_t 	bytesReceived = 0;        // Bien luu so byte da nhan
+
+	// Lay so luong byte da nhan duoc
+	uint16_t numOfByteAvail = emberSerialReadAvailable(COM_USART2);
+
+	while (numOfByteAvail > 0 && bytesReceived < RX_BUFFER_SIZE)
+	{
+		emberSerialReadByte(COM_USART2, &dataByte);
+
+		g_strRxBuffer[bytesReceived++] = dataByte;	// Luu byte vao buffer
+		numOfByteAvail--; 	// Giam so byte con lai can doc
+	}
+
+	emberEventControlSetDelayMS(usart2ScanEventControl, 50);	// 50
+}
+
+
+/*
+ * @func:  		PollRxBuff
+ *
+ * @brief:		The function to process received messages based on format
+ *
+ * @param:		port
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+uint8_t PollRxBuff (uint8_t port)
+{
+	uint8_t 	byUartState = (uint8_t) USART_STATE_IDLE;
+	uint8_t 	RxBufState = 0;
+	uint8_t 	IndexRxBuf = 0;
+	uint8_t 	byCheckXorRxBuf = 0;
+
+	while ((port == COM_USART2) && (byUartState == USART_STATE_IDLE))
+	{
+		// Variable to store value after retrieved from buffer
+		uint8_t 	byRxData = g_strRxBuffer[IndexRxBuf];
+
+		switch (RxBufState)
+		{
+			case RX_STATE_START_BYTE:
+			{
+				if (byRxData == FRAME_START)
+				{
+					IndexRxBuf = 1;
+					byCheckXorRxBuf = CXOR_INIT_VAL;
+					RxBufState = RX_STATE_DATA_BYTES;
+				}
+				else
+				{
+					byUartState = USART_STATE_ERROR;
+				}
+			} break;
+
+			case RX_STATE_DATA_BYTES:
+			{
+				if (IndexRxBuf < RX_BUFFER_SIZE)
+				{
+					if (IndexRxBuf > 1)
+					{
+						byCheckXorRxBuf ^= byRxData;		// Calculator CXOR
+					}
+
+					if (IndexRxBuf == *(g_strRxBuffer + 1))		// IndexRxBuf == FRAME_LENGTH
+					{
+						RxBufState = RX_STATE_CXOR_BYTE;
+					}
+
+					IndexRxBuf++;
+
+				}
+				else
+				{
+					RxBufState = RX_STATE_START_BYTE;
+					byUartState = USART_STATE_ERROR;
+				}
+			} break;
+
+			case RX_STATE_CXOR_BYTE:
+			{
+				if (byRxData == byCheckXorRxBuf)
+				{
+					byUartState = USART_STATE_DATA_RECEIVED;
+				}
+				else
+				{
+					byUartState = USART_STATE_ERROR;
+				}
+
+				RxBufState = RX_STATE_START_BYTE;
+			} break;
+
+			default:
+				RxBufState = RX_STATE_START_BYTE;
+				break;
+		}
+	}
+
+	return byUartState;
+}
+
+
+/*
+ * @func:  		processSerialEventHandler
+ *
+ * @brief:
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void processSerialEventHandler (void)
+{
+	emberEventControlSetInactive(processSerialEventControl);
+
+	USART_STATE	RxState = PollRxBuff(COM_USART2);
+
+	if (RxState != USART_STATE_IDLE)
+	{
+		usart2StateCB(RxState);	// Gui du lieu len han main de thuc thi su kien
+
+		emberAfCorePrintln("Count = %d", RxState);
+	}
+
+	emberEventControlSetDelayMS(processSerialEventControl, USART_PROCESS_SERIAL_INTERVAL);
+}
+
+void USART_SendFrame(uint8_t port, USART_FRAME_TX frame)
+{
+	emberAfCorePrintln("USART_SendFrame");
+
+	frame.length = 6;
+	frame.id = 2;
+	frame.type = 0;
+	frame.payload[0] = 1;
+	frame.payload[1] = 170;
+	frame.sequence = 1;
+	frame.cxor = 0x57;
+
+	// Transmit the start byte
+	uint8_t startByte = FRAME_START;
+	emberSerialWriteData(COM_USART2, &startByte, 1);
+
+	// Transmit the frame
+	emberSerialWriteData(COM_USART2, &frame.length, 1);
+	emberSerialWriteData(COM_USART2, &frame.id, 1);
+	emberSerialWriteData(COM_USART2, &frame.type, 1);
+
+	for(uint8_t i = 0; i < PAYLOAD_MAX_LENGTH; i++)
+	{
+		emberSerialWriteData(COM_USART2, (&frame.payload[i]), 1);
+	}
+
+	emberSerialWriteData(COM_USART2, &frame.sequence, 1);
+	emberSerialWriteData(COM_USART2, &frame.cxor, 1);
+}
