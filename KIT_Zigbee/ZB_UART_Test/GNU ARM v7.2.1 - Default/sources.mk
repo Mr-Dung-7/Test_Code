@@ -20,8 +20,7 @@ Source/App \
 Source/Mid/Button \
 Source/Mid/Led \
 Source/Mid/Timer \
-Source/Mid/USART \
-Source/Utils/Queue \
+Source/Mid/Usart \
 . \
 adc/EFR32 \
 aes-cmac \

@@ -8,11 +8,12 @@
 /******************************************************************************/
 /*                                INCLUDEs                                    */
 /******************************************************************************/
-#include "Source/Mid/USART/USART.h"
+#include "Source/Mid/Usart/USART.h"
 
 /******************************************************************************/
 /*                                 DEFINEs                                    */
 /******************************************************************************/
+
 
 /******************************************************************************/
 /*                            STRUCTs AND ENUMs                               */
@@ -25,47 +26,64 @@
 EmberEventControl processSerialEventControl;
 EmberEventControl usart2ScanEventControl;
 
-UsartFrameCallback usart2FrameCB = NULL;
-UsartStateCallback usart2StateCB = NULL;
+pUsartStateCallback usart2StateCallback = NULL;
 
+uint8_t 	g_IndexRxBuf = 0;
 
 // Received data storage array
 uint8_t 	g_strRxBuffer[RX_BUFFER_SIZE] = {0};
-uint8_t 	g_IndexRxBuf = 0;
 
 /******************************************************************************/
 /*                           FUNCTIONs  PROTOTYPE                             */
 /******************************************************************************/
-
+static uint8_t CalculateCheckXor (st_USART_FRAME_TX frame, uint8_t sizeFrame);
 
 /******************************************************************************/
 /*                               FUNCTIONs                              	  */
 /******************************************************************************/
 
-
-void USART2_Init (UsartStateCallback cb)
+/*
+ * @func:  		USART2_Init
+ *
+ * @brief:		Initialize USART
+ *
+ * @param:		callback
+ *
+ * @retval:		None
+ *
+ * @note:
+ * 				- usart2: Tx: PC01
+ * 				- usart2: Rx: PC02
+ */
+void USART2_Init (pUsartStateCallback callback)
 {
-	//usart2: Tx: PC01
-	//usart2: Rx: PC02
-
 	emberSerialInit(COM_USART2, 115200, PARITY_NONE, 1);
 
-	usart2StateCB = cb;
+	usart2StateCallback = callback;
 
+	// Start the scan event, with a delay on the first call: waiting for peripheral initialization
 	emberEventControlSetDelayMS(usart2ScanEventControl, 1000);
 }
 
-
-
-// Dinh ky lay so luong byte duoc nhan
-void usart2ScanEventHandler(void)
+/*
+ * @func:  		usart2ScanEventHandler
+ *
+ * @brief:		Periodic data retrieval function
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void usart2ScanEventHandler (void)
 {
 	emberEventControlSetInactive(usart2ScanEventControl);
 
 	uint8_t 	dataByte;
-	uint16_t 	bytesReceived = 0;        // Bien luu so byte da nhan
+	uint16_t 	bytesReceived = 0;        // Variable storing the number of received bytes
 
-	// Lay so luong byte da nhan duoc
+	// Get the number of received bytes
 	uint16_t numOfByteAvail = emberSerialReadAvailable(COM_USART2);
 
 	if(numOfByteAvail > 0)
@@ -74,21 +92,21 @@ void usart2ScanEventHandler(void)
 		{
 			emberSerialReadByte(COM_USART2, &dataByte);
 
-			g_strRxBuffer[bytesReceived++] = dataByte;	// Luu byte vao buffer
-			numOfByteAvail--; 	// Giam so byte con lai can doc
+			g_strRxBuffer[bytesReceived++] = dataByte;		// Store the received byte in the buffer
+			numOfByteAvail--;
 		}
 
 		processSerialHandle();
 	}
 
-	emberEventControlSetDelayMS(usart2ScanEventControl, 50);	// 50
+	emberEventControlSetDelayMS(usart2ScanEventControl, 50);
 }
 
 
 /*
  * @func:  		processSerialHandle
  *
- * @brief:
+ * @brief:		The function retrieves and sends data to the main function for event execution
  *
  * @param:		None
  *
@@ -98,26 +116,25 @@ void usart2ScanEventHandler(void)
  */
 void processSerialHandle (void)
 {
-	USART_STATE	RxState = PollRxBuff(COM_USART2);
+	e_USART_STATE	RxState = PollRxBuff(COM_USART2);
 
 	if (RxState == USART_STATE_DATA_RECEIVED || RxState == USART_STATE_ERROR)
 	{
-		usart2StateCB(RxState);	// Gui du lieu len han main de thuc thi su kien
-		static uint8_t index = 0;
-		index++;
-		emberAfCorePrintln("Count = %d, state = %d", index, RxState);
+		if (usart2StateCallback != NULL)
+		{
+			usart2StateCallback(RxState);
+		}
 	}
 }
-
 
 /*
  * @func:  		PollRxBuff
  *
  * @brief:		The function to process received messages based on format
  *
- * @param:		port
+ * @param:		port - USART port
  *
- * @retval:		None
+ * @retval:		byUartState - USART state
  *
  * @note:		None
  */
@@ -147,7 +164,7 @@ uint8_t PollRxBuff (uint8_t port)
 				}
 				else
 				{
-					byUartState = USART_STATE_ERROR;//EMPTY
+					byUartState = USART_STATE_ERROR;	// Buffer EMPTY
 				}
 			} break;
 
@@ -157,7 +174,7 @@ uint8_t PollRxBuff (uint8_t port)
 				{
 					if (g_IndexRxBuf > 1)
 					{
-						byCheckXorRxBuf ^= byRxData;		// Calculator CXOR
+						byCheckXorRxBuf ^= byRxData;		// Calculate CXOR
 					}
 
 					if (g_IndexRxBuf == *(g_strRxBuffer + 1))		// g_IndexRxBuf == FRAME_LENGTH
@@ -197,23 +214,24 @@ uint8_t PollRxBuff (uint8_t port)
 	return byUartState;
 }
 
-
-void USART_WriteDataToFrame(uint8_t port, USART_FRAME_TX frame)
+/*
+ * @func:  		USART_WriteDataToCOM
+ *
+ * @brief:		The function writes data to the configured serial port
+ *
+ * @param[1]:	port - USART port
+ * @param[2]:	frame - Frame format
+ * @param[3]:	payloadLength - Data length
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_WriteDataToCOM (uint8_t port, st_USART_FRAME_TX frame, uint8_t payloadLength)
 {
-	emberAfCorePrintln("USART_WriteDataToFrame");
-
+	uint8_t startByte = FRAME_START;
 	uint8_t nodeId_byte1 = (uint8_t)((frame.nodeId >> 8) & 0xFF);
 	uint8_t nodeId_byte2 = (uint8_t)(frame.nodeId & 0xFF);
-
-//	frame.length = 6;
-//	frame.id = 2;
-//	frame.type = 0;
-//	frame.payload[0] = 1;
-//	frame.payload[1] = 170;
-//	frame.sequence = 1;
-//	frame.cxor = 0x57;
-
-	uint8_t startByte = FRAME_START;
 
 	emberSerialWriteData(COM_USART2, &startByte, 1);
 	emberSerialWriteData(COM_USART2, &frame.length, 1);
@@ -223,7 +241,7 @@ void USART_WriteDataToFrame(uint8_t port, USART_FRAME_TX frame)
 	emberSerialWriteData(COM_USART2, &frame.id, 1);
 	emberSerialWriteData(COM_USART2, &frame.type, 1);
 
-	for(uint8_t i = 0; i < PAYLOAD_MAX_LENGTH; i++)
+	for(uint8_t i = 0; i < payloadLength; i++)
 	{
 		emberSerialWriteData(COM_USART2, (&frame.payload[i]), 1);
 	}
@@ -232,36 +250,86 @@ void USART_WriteDataToFrame(uint8_t port, USART_FRAME_TX frame)
 	emberSerialWriteData(COM_USART2, &frame.cxor, 1);
 }
 
-
-
 /*
- * @func:  		Serial_SendPacketCustom
+ * @func:  		USART_SendPacket
  *
- * @brief:		The function send text to PC_Simulator_KIT
+ * @brief:		The function sends data in the specified format
  *
- * @param[1]:	nodeID - Byte Option of the frame
- * @param[2]:	endpoint - Byte endpoint of the frame
- * @param[3]:	cmdId - Byte cmdId of the frame
- * @param[4]:	cmdType - Byte cmdType of the frame
- * @param[5]:	pPayload - Byte pPayload of the frame
- * @param[6]:	lengthPayload - Data size
+ * @param[1]:	byNodeId - Byte nodeID of the frame
+ * @param[2]:	byEndpoint - Byte endpoint of the frame
+ * @param[3]:	byCmdId - Byte cmdId of the frame
+ * @param[4]:	byCmdType - Byte cmdType of the frame
+ * @param[5]:	pPayload - Byte Data of the frame
+ * @param[6]:	byLengthPayload - Data length
  *
  * @retval:		None
  *
  * @note:		None
  */
-void USART_SendFrame (EmberNodeId nodeID,		\
-					  uint8_t endpoint,			\
-					  uint8_t cmdId, 			\
-					  uint8_t cmdType,		\
-					  uint8_t *pPayload,		\
-					  uint8_t lengthPayload)
+void USART_SendPacket (EmberNodeId byNodeId,	\
+					   uint8_t byEndpoint,		\
+					   uint8_t byCmdId, 		\
+					   uint8_t byCmdType,		\
+					   uint8_t *pPayload,		\
+					   uint8_t byLengthPayload)
 {
-	uint8_t length = lengthPayload + 7;
-	uint8_t sequence = 0;
-	uint8_t cxor = CXOR_INIT_VAL;
+	static uint8_t bySequence = 0;
 
+	st_USART_FRAME_TX frame;
 
+	frame.start = FRAME_START;
+	frame.length = byLengthPayload + 7;
+	frame.nodeId = byNodeId;
+	frame.endpoint = byEndpoint;
+	frame.id = byCmdId;
+	frame.type = byCmdType;
 
+	if (pPayload != NULL)
+	{
+		for (uint8_t i = 0; i < byLengthPayload; i++)
+		{
+			frame.payload[i] = pPayload[i];
+		}
+	}
 
+	frame.sequence = bySequence++;
+	frame.cxor = CalculateCheckXor(frame, (frame.length - 2));
 }
+
+/*
+ * @func:  		CalculateCheckXor
+ *
+ * @brief:		The function calculates the CXOR value of the transmitted frame
+ *
+ * @param[1]:	frame - Frame format
+ * @param[2]:	sizeFrame - Size of the transmitted frame
+ *
+ * @retval:		cxor - CXOR value
+ *
+ * @note:		None
+ */
+static uint8_t CalculateCheckXor (st_USART_FRAME_TX frame, uint8_t sizeFrame)
+{
+	uint8_t cxor = CXOR_INIT_VAL;
+	uint8_t byte1 = 0, byte2 = 0;
+
+	byte1 = (frame.nodeId >> 8) & 0xFF;
+	byte2 = frame.nodeId & 0xFF;
+
+	cxor ^= byte1;
+	cxor ^= byte2;
+	cxor ^= frame.endpoint;
+	cxor ^= frame.id;
+	cxor ^= frame.type;
+
+	for(uint8_t i = 0; i < sizeFrame; i++)
+	{
+		cxor ^= frame.payload[i];
+	}
+
+	cxor ^= frame.sequence;
+
+	return cxor;
+}
+
+/* END FILE */

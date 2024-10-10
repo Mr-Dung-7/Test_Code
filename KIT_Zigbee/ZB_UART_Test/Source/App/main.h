@@ -12,11 +12,11 @@
 /******************************************************************************/
 /*                                INCLUDEs                                    */
 /******************************************************************************/
-#include "Source/Mid/USART/USART.h"
 #include "app/framework/include/af.h"
 #include "Source/Mid/Button/button-user.h"
 #include "Source/Mid/Led/led-user.h"
 #include "Source/Mid/Timer/timer-user.h"
+#include "Source/Mid/Usart/USART.h"
 
 /******************************************************************************/
 /*                                 DEFINEs                                    */
@@ -36,15 +36,15 @@
 /******************************************************************************/
 /*                           FUNCTIONs  PROTOTYPE                             */
 /******************************************************************************/
+void USER_Usart2RxHandle (e_USART_STATE UartStateRx);
 void USER_ButtonPressHandle (uint8_t button, uint8_t pressCount);
 void USER_ButtonHoldHandle (uint8_t button, uint8_t holdCount);
-void USER_Usart2RxHandle (USART_STATE UartStateRx);
 
 /******************************************************************************/
 /*                               FUNCTIONs                              	  */
 /******************************************************************************/
 
 
-
-
 #endif /* SOURCE_APP_MAIN_H_ */
+
+/* END FILE */

@@ -1,6 +1,5 @@
 Source/App/main.o: ../Source/App/main.c \
  D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/App/main.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/USART/USART.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af.h \
  D:/SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/platform/base/hal/micro/cortexm3/compiler/gcc.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\device\siliconlabs\efr32mg21\include\em_device.h \
@@ -195,14 +194,12 @@ Source/App/main.o: ../Source/App/main.c \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\client-api.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\util\serial\command-interpreter2.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\cli\zcl-cli.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Utils/Queue/Queue.h \
  D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Button/button-user.h \
  D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Timer/timer-user.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Led/led-user.h
+ D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Led/led-user.h \
+ D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Usart/USART.h
 
 D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/App/main.h:
-
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/USART/USART.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af.h:
 
@@ -592,10 +589,10 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\cli\zcl-cli.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Utils/Queue/Queue.h:
-
 D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Button/button-user.h:
 
 D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Timer/timer-user.h:
 
 D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Led/led-user.h:
+
+D:\Test_Code\KIT_Zigbee\ZB_UART_Test/Source/Mid/Usart/USART.h:
