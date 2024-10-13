@@ -4461,3 +4461,220 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/ZB_UART_Test/G
 !MESSAGE Resource '/ZB_UART_Test/GNU ARM v7.2.1 - Default/Source/Mid/Usart' does not exist.
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2024-10-10 18:15:38.695
 !MESSAGE Resource '/ZB_UART_Test/GNU ARM v7.2.1 - Default/Source/Mid/Usart' does not exist.
+!SESSION 2024-10-12 21:32:22.542 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_92
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.apack.core 1 0 2024-10-12 21:32:49.585
+!MESSAGE Ignoring path $(env.STUDIO_PYTHON3_PATH) in Python
+
+!ENTRY com.silabs.ss.platform.apack.core 1 0 2024-10-12 21:32:49.616
+!MESSAGE Ignoring path $(env.STUDIO_PYTHON3_PATH)/bin in Python
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-12 21:33:05.258
+!MESSAGE No match for asset asset://aem/documents/referenced/studio/sdks_gecko_sdk_suite_v2.5_.studio_demos.xml for key com.silabs.sdk.stack.super:2.5.3./demosFile/0
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-12 21:33:05.258
+!MESSAGE No match for asset asset://aem/documents/referenced/studio/slThread_docContent.xml for key com.silabs.sdk.stack.super:2.5.3..com.silabs.sdk.stack.thread:2.9.3.0/docsFile/-1
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-12 21:33:26.250
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, RM21Z000F1024IM32, EFR32MG22A224F512IM32, EFR32MG22A224F512IM40] in framework gpd
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-12 21:33:26.313
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, RM21Z000F1024IM32] in framework ncp
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-12 21:33:26.707
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, EFR32MG22A224F512IM32, EFR32MG22A224F512IM40, RM21Z000F1024IM32] in framework znet
+
+!ENTRY org.eclipse.equinox.ds 2 0 2024-10-12 21:33:48.537
+!MESSAGE Getting a lock required more than 10000 ms. There might be a synchronization problem in this callstack or just the build/dispose process of some components took too long! 
+!STACK 0
+java.lang.Exception: Debug stacktrace
+	at org.eclipse.equinox.internal.ds.InstanceProcess.getLock(InstanceProcess.java:120)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:560)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.addingService(ProvisioningAgent.java:159)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:183)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:318)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:261)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.getService(ProvisioningAgent.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:63)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.query(AbstractRepositoryManager.java:1167)
+	at com.silabs.ss.platform.internal.api.installer.core.InstallerUtils.findFeaturesForCapabilities(InstallerUtils.java:704)
+	at com.silabs.ss.platform.internal.api.installer.core.InstallerUtils.scanFeaturesProvidingMetadata(InstallerUtils.java:468)
+	at com.silabs.ss.platform.internal.api.installer.core.InstallerUtils.getPackageProvidingMetadata(InstallerUtils.java:489)
+	at com.silabs.ss.platform.internal.installer.core.PackageService.loadRemotePackages(PackageService.java:682)
+	at com.silabs.ss.platform.internal.installer.core.PackageService.getAllAvailablePackages(PackageService.java:140)
+	at com.silabs.ss.platform.internal.installer.core.PackageService.getAvailablePackages(PackageService.java:175)
+	at com.silabs.ss.platform.internal.installer.core.PackageService.requestPackageTypeInstalled(PackageService.java:568)
+	at com.silabs.ss.platform.api.device.core.DeviceManager.triggerInspectors(DeviceManager.java:361)
+	at com.silabs.ss.platform.api.device.core.DeviceManager.addDevice(DeviceManager.java:322)
+	at com.silabs.ss.platform.api.device.core.detection.DeviceDetectionManager.processDetectionInfo(DeviceDetectionManager.java:206)
+	at com.silabs.ss.platform.api.device.core.detection.DeviceDetectionManager.list(DeviceDetectionManager.java:399)
+	at com.silabs.ss.platform.internal.apack.device.UsbDeviceBridgeListener.list(UsbHotplugNotifier.java:130)
+	at com.silabs.ss.platform.api.apack.usb.UsbManager.lambda$7(UsbManager.java:201)
+	at com.silabs.java.utils.ListenerList.fire(ListenerList.java:127)
+	at com.silabs.ss.platform.api.apack.usb.UsbManager.parseAction(UsbManager.java:201)
+	at com.silabs.ss.platform.api.apack.usb.UsbManager.parseAction(UsbManager.java:1)
+	at com.silabs.java.utils.LineParser$InternalActionListener.parseAction(LineParser.java:93)
+	at com.silabs.ss.platform.internal.apack.usb.UsbDetectorLineHandler.handle(UsbDetectorLineHandler.java:65)
+	at com.silabs.ss.platform.internal.apack.usb.UsbDetectorLineHandler.handle(UsbDetectorLineHandler.java:1)
+	at com.silabs.ss.platform.api.apack.core.execution.ErrorLoggerLineHandler.handle(Executioner.java:367)
+	at com.silabs.ss.platform.api.apack.core.execution.ErrorLoggerLineHandler.handle(Executioner.java:1)
+	at com.silabs.java.utils.LineParser.parse(LineParser.java:76)
+	at com.silabs.java.utils.LineParser.parse(LineParser.java:62)
+	at com.silabs.ss.platform.api.apack.core.execution.ParserRunnable.run(Executioner.java:329)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-12 21:33:48.818
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/offline/common/Simplicity_Studio_Terms_of_Use_and_Privacy_Statement/Simplicity_Studio_Terms_of_Use_and_Privacy_Statement_20170905.html
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-12 21:33:48.818
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/features/org.eclipse.rcp_4.5.1.v20150904-0015/license.html
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-12 21:33:48.818
+!MESSAGE Local timestamp file does not exist: D:\SiliconLabs\SimplicityStudio\v4\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-12 21:33:48.818
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/offline/common/Master_Software_License_Agreement/Master_Software_License_Agreement_20210909.html
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-12 21:33:59.810
+!MESSAGE Local timestamp file does not exist: D:\SiliconLabs\SimplicityStudio\v4\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+!SESSION 2024-10-13 14:10:00.754 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_92
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.apack.core 1 0 2024-10-13 14:10:28.373
+!MESSAGE Ignoring path $(env.STUDIO_PYTHON3_PATH) in Python
+
+!ENTRY com.silabs.ss.platform.apack.core 1 0 2024-10-13 14:10:28.408
+!MESSAGE Ignoring path $(env.STUDIO_PYTHON3_PATH)/bin in Python
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-13 14:10:42.400
+!MESSAGE No match for asset asset://aem/documents/referenced/studio/sdks_gecko_sdk_suite_v2.5_.studio_demos.xml for key com.silabs.sdk.stack.super:2.5.3./demosFile/0
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-13 14:10:42.403
+!MESSAGE No match for asset asset://aem/documents/referenced/studio/slThread_docContent.xml for key com.silabs.sdk.stack.super:2.5.3..com.silabs.sdk.stack.thread:2.9.3.0/docsFile/-1
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-13 14:11:03.736
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, RM21Z000F1024IM32, EFR32MG22A224F512IM32, EFR32MG22A224F512IM40] in framework gpd
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-13 14:11:03.779
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, RM21Z000F1024IM32] in framework ncp
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2024-10-13 14:11:04.091
+!MESSAGE Unknown architecture(s) [EFR32MG13P732F512IM48, EFR32MG13P733F512IM48, EFR32MG13P832F512IM48, EFR32MG22A224F512IM32, EFR32MG22A224F512IM40, RM21Z000F1024IM32] in framework znet
+
+!ENTRY org.eclipse.equinox.ds 2 0 2024-10-13 14:11:26.484
+!MESSAGE Getting a lock required more than 10000 ms. There might be a synchronization problem in this callstack or just the build/dispose process of some components took too long! 
+!STACK 0
+java.lang.Exception: Debug stacktrace
+	at org.eclipse.equinox.internal.ds.InstanceProcess.getLock(InstanceProcess.java:120)
+	at org.eclipse.equinox.internal.ds.InstanceProcess.buildComponent(InstanceProcess.java:560)
+	at org.eclipse.equinox.internal.ds.ServiceReg.getService(ServiceReg.java:53)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse$1.run(ServiceFactoryUse.java:212)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.factoryGetService(ServiceFactoryUse.java:210)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceFactoryUse.getService(ServiceFactoryUse.java:111)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceConsumer$2.getService(ServiceConsumer.java:45)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistrationImpl.getService(ServiceRegistrationImpl.java:496)
+	at org.eclipse.osgi.internal.serviceregistry.ServiceRegistry.getService(ServiceRegistry.java:461)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.getService(BundleContextImpl.java:619)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.addingService(ProvisioningAgent.java:159)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:1)
+	at org.osgi.util.tracker.AbstractTracked.trackAdding(AbstractTracked.java:256)
+	at org.osgi.util.tracker.AbstractTracked.trackInitial(AbstractTracked.java:183)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:318)
+	at org.osgi.util.tracker.ServiceTracker.open(ServiceTracker.java:261)
+	at org.eclipse.equinox.internal.p2.core.ProvisioningAgent.getService(ProvisioningAgent.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:63)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:768)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:668)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.basicRefreshRepository(AbstractRepositoryManager.java:203)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.refreshRepository(MetadataRepositoryManager.java:100)
+	at com.silabs.ss.platform.internal.api.installer.core.SLSP2UpdateSites.ensureStudioReposLoaded(SLSP2UpdateSites.java:643)
+	at com.silabs.ss.platform.internal.api.installer.core.InstallerUtils.ensurePackagesFetched(InstallerUtils.java:2005)
+	at com.silabs.ss.platform.internal.installer.core.updates.UpdateManager.updatePackageMetadata(UpdateManager.java:215)
+	at com.silabs.ss.platform.internal.installer.core.updates.UpdateManager.ensureUpdatesFetched(UpdateManager.java:286)
+	at com.silabs.ss.platform.internal.installer.core.updates.UpdateManager.access$4(UpdateManager.java:277)
+	at com.silabs.ss.platform.internal.installer.core.updates.UpdateManager$1.run(UpdateManager.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-13 14:11:26.606
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/offline/common/Simplicity_Studio_Terms_of_Use_and_Privacy_Statement/Simplicity_Studio_Terms_of_Use_and_Privacy_Statement_20170905.html
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-13 14:11:26.607
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/features/org.eclipse.rcp_4.5.1.v20150904-0015/license.html
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-13 14:11:26.608
+!MESSAGE Local timestamp file does not exist: D:\SiliconLabs\SimplicityStudio\v4\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.platform.installer.core 4 0 2024-10-13 14:11:26.609
+!MESSAGE Error while updateLicenses from LicenseRetriever, asset reference not found: /C:/SiliconLabs/SimplicityStudio/v4/offline/common/Master_Software_License_Agreement/Master_Software_License_Agreement_20210909.html
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2024-10-13 14:11:41.915
+!MESSAGE Local timestamp file does not exist: D:\SiliconLabs\SimplicityStudio\v4\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:08.436
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:08.455
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:10.661
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:10.661
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:12.824
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:12.825
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:14.977
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:14.978
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:18.130
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:18.130
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:20.290
+!MESSAGE Unsupported statement type: CASTCaseStatement.
+
+!ENTRY org.eclipse.cdt.codan.core.cxx 4 1 2024-10-14 00:04:20.290
+!MESSAGE Unsupported statement type: CASTCaseStatement.

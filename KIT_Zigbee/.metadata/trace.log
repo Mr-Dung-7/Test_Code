@@ -172,3 +172,15 @@
 # The following option strings are specified for this debug session:
 # 	null
 | Worker-6 | 2024-10-10 17:39:42.614 | com.iar.ide.common | /debug | com.iar.ide.common.logging.Logger | traceFile | 194 | SDK location does not exist: null |
+# !SESSION 2024-10-12 21:33:32.785
+# version: 1.1
+# verbose: true
+# The following option strings are specified for this debug session:
+# 	null
+| Worker-6 | 2024-10-12 21:33:32.785 | com.iar.ide.common | /debug | com.iar.ide.common.logging.Logger | traceFile | 194 | SDK location does not exist: null |
+# !SESSION 2024-10-13 14:11:09.633
+# version: 1.1
+# verbose: true
+# The following option strings are specified for this debug session:
+# 	null
+| Worker-8 | 2024-10-13 14:11:09.633 | com.iar.ide.common | /debug | com.iar.ide.common.logging.Logger | traceFile | 194 | SDK location does not exist: null |

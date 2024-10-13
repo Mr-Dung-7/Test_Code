@@ -25,6 +25,9 @@
 /******************************************************************************/
 st_USART_FRAME_TX 	TxFrame;
 
+uint8_t data[] = {0,1};
+char text[] = "IOT";
+
 /******************************************************************************/
 /*                           FUNCTIONs  PROTOTYPE                             */
 /******************************************************************************/
@@ -83,17 +86,27 @@ void USER_Usart2RxHandle (e_USART_STATE UartStateRx)
 	{
 		switch (UartStateRx)
 		{
+			case USART_STATE_EMPTY:
+			{
+				emberAfCorePrintln("USART_STATE_EMPTY\n");
+			} break;
+
 			case USART_STATE_DATA_RECEIVED:
 			{
 				led_turnOn(LED_2, PINK);
-				emberAfCorePrintln("\nDa nhan ban tin thanh cong");
+				emberAfCorePrintln("USART_STATE_DATA_RECEIVED\n");
+			} break;
+
+			case USART_STATE_DATA_ERROR:
+			{
+				emberAfCorePrintln("USART_STATE_DATA_ERROR\n");
 			} break;
 
 			case USART_STATE_ERROR:
 			case USART_STATE_RX_TIMEOUT:
 			{
 				led_turnOff(LED_2);
-				emberAfCorePrintln("xxxxxxxxxx\n");
+				emberAfCorePrintln("USART_STATE_ERROR_OR_RX_TIMEOUT\n");
 			} break;
 
 			default:
@@ -125,14 +138,16 @@ void USER_ButtonPressHandle (uint8_t button, uint8_t pressCount)
 				emberAfCorePrintln("Turn on LED_1: BLUE");
 				led_turnOn(LED_1, BLUE);
 
-				USART_WriteDataToCOM(COM_USART2, TxFrame, sizeof(TxFrame));
-
+//				USART_SendPacket(CMD_ID, CMD_TYPE_SET, data, sizeof(data));
+				USART_SendPacket(0x1234, 0x01, CMD_ID, CMD_TYPE_SET, data, sizeof(data));
 			} break;
 
 			case press_2:
 			{
 				emberAfCorePrintln("Turn off LED_1");
 				led_turnOff(LED_1);
+
+//				USART_SendPacket(CMD_ID, CMD_TYPE_SET, data, sizeof(data));
 			} break;
 
 			case press_3:

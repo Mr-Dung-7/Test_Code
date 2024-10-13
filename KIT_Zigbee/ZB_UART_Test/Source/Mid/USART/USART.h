@@ -25,6 +25,7 @@
 #define PAYLOAD_LENGTH_MAX				2
 
 #define FRAME_START 					0xB1
+#define CMD_ID							0x01
 
 // Message retrieving information and status of the device from the host computer
 #define CMD_TYPE_GET               		0x00
@@ -67,7 +68,9 @@ typedef enum
 typedef enum
 {
     USART_STATE_IDLE,
+	USART_STATE_EMPTY,
     USART_STATE_DATA_RECEIVED,
+	USART_STATE_DATA_ERROR,
     USART_STATE_ERROR,
     USART_STATE_RX_TIMEOUT,
 } e_USART_STATE;
@@ -84,13 +87,19 @@ typedef void (*pUsartStateCallback)(e_USART_STATE);
 void USART2_Init (pUsartStateCallback callback);
 void processSerialHandle (void);
 uint8_t PollRxBuff (uint8_t port);
-void USART_WriteDataToCOM (uint8_t port, st_USART_FRAME_TX frame, uint8_t payloadLength);
 void USART_SendPacket (EmberNodeId byNodeId,	\
 					   uint8_t byEndpoint,		\
 					   uint8_t byCmdId, 		\
 					   uint8_t byCmdType,		\
 					   uint8_t *pPayload,		\
 					   uint8_t byLengthPayload);
+
+//void USART_SendPacket (uint8_t byCmdId, 		\
+//					   uint8_t byCmdType,		\
+//					   uint8_t *pPayload,		\
+//					   uint8_t byLengthPayload);
+
+void USART_WriteDataToCOM (uint8_t port, st_USART_FRAME_TX frame, uint8_t payloadLength);
 
 /******************************************************************************/
 /*                               FUNCTIONs                              	  */

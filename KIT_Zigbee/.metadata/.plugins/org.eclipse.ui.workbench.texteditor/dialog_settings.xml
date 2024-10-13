@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="e_USART_STATE" key="selection"/>
+		<item value="USART_STATE_DATA_RECEIVED" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="USART_STATE_DATA_RECEIVED"/>
+			<item value="RECEIVED"/>
+			<item value="USART_STATE_DATA_ERROR"/>
+			<item value="PAYLOAD_LENGTH_MAX"/>
 			<item value="e_USART_STATE"/>
 			<item value="UsartState"/>
 			<item value="pUsartStateCallback"/>
 			<item value="UsartStateCallback"/>
-			<item value="byCxor"/>
-			<item value="FRAME_ACK"/>
-			<item value="UsartFrameCallback"/>
-			<item value="emberSerialReadAvailable"/>
 		</list>
 		<list key="replacehistory">
 			<item value="g_IndexRxBuf"/>

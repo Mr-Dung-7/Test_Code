@@ -164,7 +164,7 @@ uint8_t PollRxBuff (uint8_t port)
 				}
 				else
 				{
-					byUartState = USART_STATE_ERROR;	// Buffer EMPTY
+					byUartState = USART_STATE_EMPTY;	// Buffer EMPTY
 				}
 			} break;
 
@@ -187,7 +187,7 @@ uint8_t PollRxBuff (uint8_t port)
 				else
 				{
 					RxBufState = RX_STATE_START_BYTE;
-					byUartState = USART_STATE_ERROR;
+					byUartState = USART_STATE_DATA_ERROR;
 				}
 			} break;
 
@@ -212,42 +212,6 @@ uint8_t PollRxBuff (uint8_t port)
 	}
 
 	return byUartState;
-}
-
-/*
- * @func:  		USART_WriteDataToCOM
- *
- * @brief:		The function writes data to the configured serial port
- *
- * @param[1]:	port - USART port
- * @param[2]:	frame - Frame format
- * @param[3]:	payloadLength - Data length
- *
- * @retval:		None
- *
- * @note:		None
- */
-void USART_WriteDataToCOM (uint8_t port, st_USART_FRAME_TX frame, uint8_t payloadLength)
-{
-	uint8_t startByte = FRAME_START;
-	uint8_t nodeId_byte1 = (uint8_t)((frame.nodeId >> 8) & 0xFF);
-	uint8_t nodeId_byte2 = (uint8_t)(frame.nodeId & 0xFF);
-
-	emberSerialWriteData(COM_USART2, &startByte, 1);
-	emberSerialWriteData(COM_USART2, &frame.length, 1);
-	emberSerialWriteData(COM_USART2, &nodeId_byte1, 1);
-	emberSerialWriteData(COM_USART2, &nodeId_byte2, 1);
-	emberSerialWriteData(COM_USART2, &frame.endpoint,1);
-	emberSerialWriteData(COM_USART2, &frame.id, 1);
-	emberSerialWriteData(COM_USART2, &frame.type, 1);
-
-	for(uint8_t i = 0; i < payloadLength; i++)
-	{
-		emberSerialWriteData(COM_USART2, (&frame.payload[i]), 1);
-	}
-
-	emberSerialWriteData(COM_USART2, &frame.sequence, 1);
-	emberSerialWriteData(COM_USART2, &frame.cxor, 1);
 }
 
 /*
@@ -294,7 +258,56 @@ void USART_SendPacket (EmberNodeId byNodeId,	\
 
 	frame.sequence = bySequence++;
 	frame.cxor = CalculateCheckXor(frame, (frame.length - 2));
+
+	USART_WriteDataToCOM(COM_USART2, frame, byLengthPayload);
 }
+
+
+
+
+///*
+// * @func:  		USART_SendPacket
+// *
+// * @brief:		The function sends data in the specified format
+// *
+// * @param[1]:	byCmdId - Byte cmdId of the frame
+// * @param[2]:	byCmdType - Byte cmdType of the frame
+// * @param[3]:	pPayload - Byte Data of the frame
+// * @param[4]:	byLengthPayload - Data length
+// *
+// * @retval:		None
+// *
+// * @note:		None
+// */
+//void USART_SendPacket (uint8_t byCmdId, 		\
+//					   uint8_t byCmdType,		\
+//					   uint8_t *pPayload,		\
+//					   uint8_t byLengthPayload)
+//{
+//	static uint8_t bySequence = 0;
+//
+//	st_USART_FRAME_TX frame;
+//
+//	frame.start = FRAME_START;
+//	frame.length = byLengthPayload + 4;
+//	frame.id = byCmdId;
+//	frame.type = byCmdType;
+//
+//	if (pPayload != NULL)
+//	{
+//		for (uint8_t i = 0; i < byLengthPayload; i++)
+//		{
+//			frame.payload[i] = pPayload[i];
+//		}
+//	}
+//
+//	frame.sequence = bySequence++;
+//	frame.cxor = CalculateCheckXor(frame, (frame.length - 2));
+//
+//	USART_WriteDataToCOM(COM_USART2, frame, byLengthPayload);
+//}
+
+
 
 /*
  * @func:  		CalculateCheckXor
@@ -330,6 +343,43 @@ static uint8_t CalculateCheckXor (st_USART_FRAME_TX frame, uint8_t sizeFrame)
 	cxor ^= frame.sequence;
 
 	return cxor;
+}
+
+
+/*
+ * @func:  		USART_WriteDataToCOM
+ *
+ * @brief:		The function writes data to the configured serial port
+ *
+ * @param[1]:	port - USART port
+ * @param[2]:	frame - Frame format
+ * @param[3]:	payloadLength - Data length
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_WriteDataToCOM (uint8_t port, st_USART_FRAME_TX frame, uint8_t payloadLength)
+{
+	uint8_t startByte = FRAME_START;
+	uint8_t nodeId_byte1 = (uint8_t)((frame.nodeId >> 8) & 0xFF);
+	uint8_t nodeId_byte2 = (uint8_t)(frame.nodeId & 0xFF);
+
+	emberSerialWriteData(COM_USART2, &startByte, 1);
+	emberSerialWriteData(COM_USART2, &frame.length, 1);
+	emberSerialWriteData(COM_USART2, &nodeId_byte1, 1);
+	emberSerialWriteData(COM_USART2, &nodeId_byte2, 1);
+	emberSerialWriteData(COM_USART2, &frame.endpoint,1);
+	emberSerialWriteData(COM_USART2, &frame.id, 1);
+	emberSerialWriteData(COM_USART2, &frame.type, 1);
+
+	for(uint8_t i = 0; i < payloadLength; i++)
+	{
+		emberSerialWriteData(COM_USART2, (&frame.payload[i]), 1);
+	}
+
+	emberSerialWriteData(COM_USART2, &frame.sequence, 1);
+	emberSerialWriteData(COM_USART2, &frame.cxor, 1);
 }
 
 /* END FILE */
