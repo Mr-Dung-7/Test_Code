@@ -59,14 +59,9 @@ static void uart_event_task(void *pvParameters)
                     // ESP_LOGI(TAG, "[UART DATA]: %d", event.size);
                     ESP_LOGI(TAG, "[dungnh]: %d", event.size);
                     uart_read_bytes(EX_UART_NUM, dtmp, event.size, portMAX_DELAY);
-                    // ESP_LOGI(TAG, "[DATA EVT]:");
-                    // uart_write_bytes(EX_UART_NUM, (const char*) dtmp, event.size);
-                    int data_uart_write = uart_write_bytes(EX_UART_NUM, (const char*) dtmp, event.size);
-                    if (data_uart_write != 0)
-                    {
-                        ESP_LOGI(TAG, "[EVTzzzzz]: %d", data_uart_write);
-                    }
-                } break;
+                    ESP_LOGI(TAG, "[DATA EVT]:");
+                    uart_write_bytes(EX_UART_NUM, (const char*) dtmp, event.size);
+                  } break;
 
                 //Event of HW FIFO overflow detected
                 case UART_FIFO_OVF:
@@ -136,7 +131,7 @@ void app_main(void)
     uart_param_config(EX_UART_NUM, &uart_config);
 
     //Set UART pins (using UART0 default pins ie no changes.)
-    uart_set_pin(EX_UART_NUM, UART_PIN_TX2, UART_PIN_RX2, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    uart_set_pin(EX_UART_NUM, UART2_PIN_TX, UART2_PIN_RX, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
 
     //Create a task to handler UART event from ISR
     xTaskCreate(uart_event_task, "uart_event_task", 3072, NULL, 12, NULL);
