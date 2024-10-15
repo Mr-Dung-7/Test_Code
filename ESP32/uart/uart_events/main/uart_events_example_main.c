@@ -11,17 +11,17 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/queue.h"
+#include "driver/gpio.h"
 #include "driver/uart.h"
 #include "esp_log.h"
 
-static const char *TAG = "uart_events";
 
 /**
  * This example shows how to use the UART driver to handle special UART events.
  *
  * It also reads data from UART0 directly, and echoes it to console.
  *
- * - Port: UART0
+ * - Port: UART2
  * - Receive (Rx) buffer: on
  * - Transmit (Tx) buffer: off
  * - Flow control: off
@@ -29,92 +29,32 @@ static const char *TAG = "uart_events";
  * - Pin assignment: TxD (default), RxD (default)
  */
 
-#define EX_UART_NUM         UART_NUM_2
-#define PATTERN_CHR_NUM     (3)         /*!< Set the number of consecutive and identical characters received by receiver which defines a UART pattern*/
+#define UART_NUM            UART_NUM_2
 
 #define BUF_SIZE            (1024)
-#define RD_BUF_SIZE         (BUF_SIZE)
+#define RX_BUF_SIZE         (BUF_SIZE)
+
 static QueueHandle_t        uart2_queue;
 
-static void uart_event_task(void *pvParameters)
-{
-    uart_event_t event;
-    size_t buffered_size;
-    uint8_t* dtmp = (uint8_t*) malloc(RD_BUF_SIZE);
-    for (;;)
-    {
-        //Waiting for UART event.
-        if (xQueueReceive(uart2_queue, (void *)&event, (TickType_t)portMAX_DELAY))
-        {
-            bzero(dtmp, RD_BUF_SIZE);
-            ESP_LOGI(TAG, "uart[%d] event:", EX_UART_NUM);
-            switch (event.type)
-            {
-                //Event of UART receiving data
-                /*We'd better handler data event fast, there would be much more data events than
-                other types of events. If we take too much time on data event, the queue might
-                be full.*/
-                case UART_DATA:
-                {
-                    // ESP_LOGI(TAG, "[UART DATA]: %d", event.size);
-                    ESP_LOGI(TAG, "[dungnh]: %d", event.size);
-                    uart_read_bytes(EX_UART_NUM, dtmp, event.size, portMAX_DELAY);
-                    ESP_LOGI(TAG, "[DATA EVT]:");
-                    uart_write_bytes(EX_UART_NUM, (const char*) dtmp, event.size);
-                  } break;
 
-                //Event of HW FIFO overflow detected
-                case UART_FIFO_OVF:
-                {
-                    ESP_LOGI(TAG, "hw fifo overflow");
-                    // If fifo overflow happened, you should consider adding flow control for your application.
-                    // The ISR has already reset the rx FIFO,
-                    // As an example, we directly flush the rx buffer here in order to read more data.
-                    uart_flush_input(EX_UART_NUM);
-                    xQueueReset(uart2_queue);
-                } break;
+void init_uart (void);
+static void rx_task (void *arg);
+static void tx_task (void *arg);
 
-                //Event of UART ring buffer full
-                case UART_BUFFER_FULL:
-                {
-                    ESP_LOGI(TAG, "ring buffer full");
-                    // If buffer full happened, you should consider increasing your buffer size
-                    // As an example, we directly flush the rx buffer here in order to read more data.
-                    uart_flush_input(EX_UART_NUM);
-                    xQueueReset(uart2_queue);
-                } break;
-
-                //Event of UART RX break detected
-                case UART_BREAK:
-                    ESP_LOGI(TAG, "uart rx break");
-                    break;
-
-                //Event of UART parity check error
-                case UART_PARITY_ERR:
-                    ESP_LOGI(TAG, "uart parity error");
-                    break;
-
-                //Event of UART frame error
-                case UART_FRAME_ERR:
-                    ESP_LOGI(TAG, "uart frame error");
-                    break;
-
-                //Others
-                default:
-                    ESP_LOGI(TAG, "uart event type: %d", event.type);
-                    break;
-            }
-        }
-    }
-    free(dtmp);
-    dtmp = NULL;
-    vTaskDelete(NULL);
-}
 
 void app_main(void)
 {
-    esp_log_level_set(TAG, ESP_LOG_INFO);
+    // UART initialize
+    init_uart();
 
+    // Create a task to handler UART
+    xTaskCreate(rx_task, "uart_rx_task", BUF_SIZE*2, NULL, configMAX_PRIORITIES, NULL);
+    xTaskCreate(tx_task, "uart_tx_task", BUF_SIZE*2, NULL, configMAX_PRIORITIES-1, NULL);
+}
+
+
+void init_uart (void)
+{
     /* Configure parameters of an UART driver,
      * communication pins and install the driver */
     uart_config_t uart_config = {
@@ -127,12 +67,50 @@ void app_main(void)
     };
 
     //Install UART driver, and get the queue.
-    uart_driver_install(EX_UART_NUM, BUF_SIZE * 2, BUF_SIZE * 2, 20, &uart2_queue, 0);
-    uart_param_config(EX_UART_NUM, &uart_config);
-
-    //Set UART pins (using UART0 default pins ie no changes.)
-    uart_set_pin(EX_UART_NUM, UART2_PIN_TX, UART2_PIN_RX, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
-
-    //Create a task to handler UART event from ISR
-    xTaskCreate(uart_event_task, "uart_event_task", 3072, NULL, 12, NULL);
+    ESP_ERROR_CHECK(uart_driver_install(UART_NUM, BUF_SIZE * 2, BUF_SIZE * 2, 20, &uart2_queue, 0));
+    ESP_ERROR_CHECK(uart_param_config(UART_NUM, &uart_config));
+    
+    //Set UART pins
+    ESP_ERROR_CHECK(uart_set_pin(UART_NUM, UART2_PIN_TX, UART2_PIN_RX, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE));
 }
+
+
+
+static void rx_task (void *arg)
+{
+    static const char *rx_task_tag = "RX_TASK";
+
+    uint8_t *data = (uint8_t*) malloc (RX_BUF_SIZE);
+
+    while (1) 
+    {
+        const int rxBytes = uart_read_bytes(UART_NUM, data, RX_BUF_SIZE, 200 / portTICK_PERIOD_MS);
+        if (rxBytes > 0) 
+        {
+            data[rxBytes] = 0;
+            ESP_LOGI(rx_task_tag, "Read %d bytes: '%s'", rxBytes, data);
+        }
+    }
+
+    free(data);
+}
+
+
+static void tx_task (void *arg)
+{
+    uint16_t num = 0;
+    uint8_t *data = (uint8_t*) malloc (BUF_SIZE);
+
+    static const char *tx_task_msg = "Hello from ESP32!\n";
+
+    while (1)
+    {
+        uint32_t len = sprintf ((char*)data, *tx_task_msg %d\n, num++);
+
+        uart_write_bytes(UART_NUM, data, len);
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+    }
+
+    free (data);
+}
+

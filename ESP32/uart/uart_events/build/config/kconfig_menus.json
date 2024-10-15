@@ -5274,7 +5274,7 @@
                     {
                         "children": [],
                         "depends_on": "<choice COMPILER_ORPHAN_SECTIONS>",
-                        "help": "Places orphan sections without a warning message.",
+                        "help": "Places orphan sections with a warning message.",
                         "id": "COMPILER_ORPHAN_SECTIONS_WARNING",
                         "name": "COMPILER_ORPHAN_SECTIONS_WARNING",
                         "range": null,
@@ -13604,21 +13604,21 @@
                     {
                         "children": [],
                         "depends_on": "ESP_TLS_USING_WOLFSSL",
-                        "help": "Enables server verification with Intermediate CA cert, does not authenticate full chain\nof trust upto the root CA cert (After Enabling this option client only needs to have Intermediate\nCA certificate of the server to authenticate server, root CA cert is not necessary).",
-                        "id": "ESP_WOLFSSL_SMALL_CERT_VERIFY",
-                        "name": "ESP_WOLFSSL_SMALL_CERT_VERIFY",
-                        "range": null,
-                        "title": "Enable SMALL_CERT_VERIFY",
-                        "type": "bool"
-                    },
-                    {
-                        "children": [],
-                        "depends_on": "ESP_TLS_USING_WOLFSSL",
                         "help": "Enable detailed debug prints for wolfSSL SSL library.",
                         "id": "ESP_DEBUG_WOLFSSL",
                         "name": "ESP_DEBUG_WOLFSSL",
                         "range": null,
                         "title": "Enable debug logs for wolfSSL",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "ESP_TLS_USING_WOLFSSL",
+                        "help": "Enable a fuller set of OCSP checks: checking revocation status of intermediate certificates,\noptional fallbacks to CRLs, etc.",
+                        "id": "ESP_TLS_OCSP_CHECKALL",
+                        "name": "ESP_TLS_OCSP_CHECKALL",
+                        "range": null,
+                        "title": "Enabled full OCSP checks for ESP-TLS",
                         "type": "bool"
                     }
                 ],
@@ -17378,6 +17378,16 @@
                         "id": "component-config-esp-security-specific-crypto-dpa-protection",
                         "title": "Crypto DPA Protection",
                         "type": "menu"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "SOC_ECC_CONSTANT_TIME_POINT_MUL",
+                        "help": "If enabled, the app startup code will burn the ECC_FORCE_CONST_TIME efuse bit to force the\nECC peripheral to always perform constant time point multiplication operations,\nirrespective of the ECC_MULT_SECURITY_MODE status bit that is present in the ECC_MULT_CONF_REG\nregister. By default, ESP-IDF configures the ECC peripheral to perform constant time point\nmultiplication operations, so enabling this config would provide security enhancement only in\nthe cases when trusted boot is not enabled and the attacker tries carrying out non-constant\ntime point multiplication operations by changing the default ESP-IDF configurations.\nPerforming constant time operations protect the ECC multiplication operations from timing attacks.",
+                        "id": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
+                        "name": "ESP_CRYPTO_FORCE_ECC_CONSTANT_TIME_POINT_MUL",
+                        "range": null,
+                        "title": "Forcfully enable ECC constant time point multiplication operations",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -21573,6 +21583,16 @@
                         "range": null,
                         "title": null,
                         "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": null,
+                        "help": "Enable this option to apply the countermeasure for ECDSA signature operation\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.",
+                        "id": "HAL_ECDSA_GEN_SIG_CM",
+                        "name": "HAL_ECDSA_GEN_SIG_CM",
+                        "range": null,
+                        "title": "Enable countermeasure for ECDSA signature generation",
+                        "type": "bool"
                     }
                 ],
                 "depends_on": null,
@@ -25104,7 +25124,36 @@
                         "type": "bool"
                     },
                     {
-                        "children": [],
+                        "children": [
+                            {
+                                "children": [
+                                    {
+                                        "children": [],
+                                        "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                        "help": "The ECDSA peripheral before ECO5 does not offer constant time ECDSA sign operation.\nThis time can be observed through power profiling of the device,\nmaking the ECDSA private key vulnerable to side-channel timing attacks.\nThis countermeasure masks the real ECDSA sign operation\nunder dummy sign operations to add randomness in the generated power signature.\nIt is highly recommended to also enable Secure Boot for the device in addition to this countermeasure\nso that only trusted software can execute on the device.",
+                                        "id": "MBEDTLS_HARDWARE_ECDSA_SIGN_MASKING_CM",
+                                        "name": "MBEDTLS_HARDWARE_ECDSA_SIGN_MASKING_CM",
+                                        "range": null,
+                                        "title": "Mask original ECDSA sign operation under dummy sign operations",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "children": [],
+                                        "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                        "help": "This option adds a delay after the actual ECDSA signature operation\nso that the entire operation appears to be constant time for the software.\nThis fix helps in protecting the device only in case of remote timing attack on the ECDSA private key.\nFor e.g., When an interface is exposed by the device to perform ECDSA signature\nof an arbitrary message.\nThe signature time would appear to be constant to the external entity after enabling\nthis option.",
+                                        "id": "MBEDTLS_HARDWARE_ECDSA_SIGN_CONSTANT_TIME_CM",
+                                        "name": "MBEDTLS_HARDWARE_ECDSA_SIGN_CONSTANT_TIME_CM",
+                                        "range": null,
+                                        "title": "Make ECDSA signature operation pseudo constant time for software",
+                                        "type": "bool"
+                                    }
+                                ],
+                                "depends_on": "MBEDTLS_HARDWARE_ECDSA_SIGN && IDF_TARGET_ESP32H2",
+                                "id": "component-config-mbedtls-enable-ecdsa-signing-using-on-chip-ecdsa-peripheral-enable-software-countermeasure-for-ecdsa-signing-using-on-chip-ecdsa-peripheral",
+                                "title": "Enable Software Countermeasure for ECDSA signing using on-chip ECDSA peripheral",
+                                "type": "menu"
+                            }
+                        ],
                         "depends_on": "SOC_ECDSA_SUPPORTED",
                         "help": "Enable hardware accelerated ECDSA peripheral to sign data\non curve SECP192R1 and SECP256R1 in mbedTLS.\n\nNote that for signing, the private key has to be burnt in an efuse key block\nwith key purpose set to ECDSA_KEY.\nIf no key is burnt, it will report an error\n\nThe key should be burnt in little endian format. espefuse.py utility handles it internally\nbut care needs to be taken while burning using esp_efuse APIs",
                         "id": "MBEDTLS_HARDWARE_ECDSA_SIGN",
@@ -25933,6 +25982,16 @@
                         "name": "MBEDTLS_USE_CRYPTO_ROM_IMPL",
                         "range": null,
                         "title": "Use ROM implementation of the crypto algorithm",
+                        "type": "bool"
+                    },
+                    {
+                        "children": [],
+                        "depends_on": "(VFS_SUPPORT_IO && VFS_SUPPORT_DIR) || IDF_TARGET_LINUX",
+                        "help": "This option enables functions in mbedTLS that use the filesystem.\nIt uses the default filesystem support for the target,\nwhich is added through vfs component for ESP32 based targets or by\nthe host system when the target is Linux.",
+                        "id": "MBEDTLS_FS_IO",
+                        "name": "MBEDTLS_FS_IO",
+                        "range": null,
+                        "title": "Enable functions that use the filesystem",
                         "type": "bool"
                     }
                 ],
@@ -28582,6 +28641,55 @@
                                         "range": null,
                                         "title": "Support multiple Hubs",
                                         "type": "bool"
+                                    },
+                                    {
+                                        "children": [
+                                            {
+                                                "children": [],
+                                                "depends_on": "IDF_EXPERIMENTAL_FEATURES && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Enables support of Low-speed devices, connected through the external Hub.",
+                                                "id": "USB_HOST_EXT_PORT_SUPPORT_LS",
+                                                "name": "USB_HOST_EXT_PORT_SUPPORT_LS",
+                                                "range": null,
+                                                "title": "Support LS",
+                                                "type": "bool"
+                                            },
+                                            {
+                                                "children": [],
+                                                "depends_on": "IDF_EXPERIMENTAL_FEATURES && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Amount of attempts to reset the device.\n\nThe default value is 1.",
+                                                "id": "USB_HOST_EXT_PORT_RESET_ATTEMPTS",
+                                                "name": "USB_HOST_EXT_PORT_RESET_ATTEMPTS",
+                                                "range": null,
+                                                "title": null,
+                                                "type": "int"
+                                            },
+                                            {
+                                                "children": [
+                                                    {
+                                                        "children": [],
+                                                        "depends_on": "USB_HOST_EXT_PORT_CUSTOM_RESET_ENABLE && USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                        "help": "Custom value of delay from the time the power-on sequence begins on a port\nuntil power is good on that port.\nValue 0 is used for a hub with no power switches.\n\nThe default value is 100 ms.",
+                                                        "id": "USB_HOST_EXT_PORT_CUSTOM_RESET_MS",
+                                                        "name": "USB_HOST_EXT_PORT_CUSTOM_RESET_MS",
+                                                        "range": null,
+                                                        "title": "PwrOn2PwrGood delay in ms",
+                                                        "type": "int"
+                                                    }
+                                                ],
+                                                "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                                "help": "Enables the possibility to configure custom time for the power-on sequence on a port\nuntil power is good on that port.\n\nWhen enabled, applies the custom PwrOn2PwrGood delay.\nWhen disabled, applies the PwrOn2PwrGood value from the Hub Descriptor.",
+                                                "id": "USB_HOST_EXT_PORT_CUSTOM_RESET_ENABLE",
+                                                "name": "USB_HOST_EXT_PORT_CUSTOM_RESET_ENABLE",
+                                                "range": null,
+                                                "title": "Custom bPwrOn2PwrGood value",
+                                                "type": "bool"
+                                            }
+                                        ],
+                                        "depends_on": "USB_HOST_HUBS_SUPPORTED && SOC_USB_OTG_SUPPORTED",
+                                        "id": "component-config-usb-otg-hub-driver-configuration-support-hubs-downstream-port-configuration",
+                                        "title": "Downstream Port configuration",
+                                        "type": "menu"
                                     }
                                 ],
                                 "depends_on": "SOC_USB_OTG_SUPPORTED",
@@ -28957,7 +29065,7 @@
     {
         "children": [],
         "depends_on": null,
-        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.\n\nCurrent experimental feature list:\n\n- CONFIG_ESPTOOLPY_FLASHFREQ_120M && CONFIG_ESPTOOLPY_FLASH_SAMPLE_MODE_DTR\n- CONFIG_SPIRAM_SPEED_120M && CONFIG_SPIRAM_MODE_OCT\n- CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH\n- CONFIG_ESP_WIFI_EAP_TLS1_3\n- CONFIG_ESP_WIFI_ENABLE_ROAMING_APP",
+        "help": "By enabling this option, ESP-IDF experimental feature options will be visible.\n\nNote you should still enable a certain experimental feature option to use it, and you\nshould read the corresponding risk warning and known issue list carefully.\n\nCurrent experimental feature list:\n\n- CONFIG_ESPTOOLPY_FLASHFREQ_120M && CONFIG_ESPTOOLPY_FLASH_SAMPLE_MODE_DTR\n- CONFIG_SPIRAM_SPEED_120M && CONFIG_SPIRAM_MODE_OCT\n- CONFIG_BOOTLOADER_CACHE_32BIT_ADDR_QUAD_FLASH\n- CONFIG_ESP_WIFI_EAP_TLS1_3\n- CONFIG_ESP_WIFI_ENABLE_ROAMING_APP\n- CONFIG_USB_HOST_EXT_PORT_SUPPORT_LS\n- CONFIG_USB_HOST_EXT_PORT_RESET_ATTEMPTS",
         "id": "IDF_EXPERIMENTAL_FEATURES",
         "name": "IDF_EXPERIMENTAL_FEATURES",
         "range": null,
