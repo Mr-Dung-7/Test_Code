@@ -75,7 +75,6 @@ void init_uart (void)
 }
 
 
-
 static void rx_task (void *arg)
 {
     static const char *rx_task_tag = "RX_TASK";
