@@ -63,8 +63,8 @@ ember-base-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\ember-configuration-defaults.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-static-struct.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\error.h \
@@ -94,7 +94,7 @@ ember-base-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\mac-layer.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-random-api.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_se.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\plugin\plugin-common\mbedtls\config-device-acceleration-app.h \
@@ -117,7 +117,7 @@ ember-base-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\nvic-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\efr32/nvic-config-series2-config1.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\config\emlib_config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\ember-hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\plugin/antenna/antenna.h \
@@ -155,16 +155,16 @@ ember-base-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro/cortexm3/efm32/mfg-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing-series-2.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-stack.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-phy.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\zll\zll-token-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\gp\gp-token-config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af-types.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\scenes\scenes-tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\reporting\reporting-tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro/bootloader-interface.h \
@@ -306,9 +306,9 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h:
 
@@ -368,7 +368,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h:
 
@@ -414,7 +414,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\config\emlib_config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h:
 
@@ -490,7 +490,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing-series-2.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-stack.h:
 
@@ -500,15 +500,15 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\gp\gp-token-config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\tokens.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af-types.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\scenes\scenes-tokens.h:
 

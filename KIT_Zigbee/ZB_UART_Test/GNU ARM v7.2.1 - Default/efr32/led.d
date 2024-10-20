@@ -60,7 +60,7 @@ efr32/led.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_assert.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\generic\compiler\platform-common.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\led.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_gpio.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_bus.h \
@@ -187,7 +187,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\led.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h:
 

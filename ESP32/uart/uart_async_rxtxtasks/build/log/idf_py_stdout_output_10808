@@ -1,0 +1,7 @@
+[1/4] C:\Windows\system32\cmd.exe /C "cd /D D:\GIT-RepoManager\Test_Code\ESP32\uart\uart_async_rxtxtasks\build\esp-idf\esptool_py && F:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe F:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 partition --type app D:/GIT-RepoManager/Test_Code/ESP32/uart/uart_async_rxtxtasks/build/partition_table/partition-table.bin D:/GIT-RepoManager/Test_Code/ESP32/uart/uart_async_rxtxtasks/build/uart_async_rxtxtasks.bin"
+uart_async_rxtxtasks.bin binary size 0x31720 bytes. Smallest app partition is 0x100000 bytes. 0xce8e0 bytes (81%) free.
+[2/4] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D D:\GIT-RepoManager\Test_Code\ESP32\uart\uart_async_rxtxtasks\build\bootloader\esp-idf\esptool_py && F:\Espressif\python_env\idf5.4_py3.11_env\Scripts\python.exe F:/Espressif/frameworks/esp-idf-v5.3.1/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 D:/GIT-RepoManager/Test_Code/ESP32/uart/uart_async_rxtxtasks/build/bootloader/bootloader.bin"
+Bootloader binary size 0x6860 bytes. 0x7a0 bytes (7%) free.
+[3/4] No install step for 'bootloader'
+[4/4] Completed 'bootloader'

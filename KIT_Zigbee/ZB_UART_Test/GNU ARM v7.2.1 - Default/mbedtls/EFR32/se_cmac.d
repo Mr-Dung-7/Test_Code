@@ -1,7 +1,7 @@
 mbedtls/EFR32/se_cmac.o: \
  D:/SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/util/third_party/mbedtls/sl_crypto/src/se_cmac.c \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\include\mbedtls\cmac.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\device\siliconlabs\efr32mg21\include\em_device.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\device\siliconlabs\efr32mg21\include\efr32mg21a010f512im32.h \
@@ -65,7 +65,7 @@ mbedtls/EFR32/se_cmac.o: \
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\include\mbedtls\cmac.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h:
 

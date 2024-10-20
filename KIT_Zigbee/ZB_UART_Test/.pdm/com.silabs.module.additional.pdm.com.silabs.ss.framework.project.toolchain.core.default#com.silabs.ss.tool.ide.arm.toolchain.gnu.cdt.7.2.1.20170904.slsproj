@@ -3,11 +3,35 @@
   <folder name="emlib" partCompatibility=".*efr32.*">
     <file name="system_efr32mg21.c" uri="studio:/sdk/platform/Device/SiliconLabs/EFR32MG21/Source/system_efr32mg21.c"/>
   </folder>
-  <folder name="hal-config">
-    <file name="hal-config.h" uri="studio:/project/hal-config/hal-config.h"/>
-  </folder>
   <folder name="external-generated-files">
+    <file name="znet-bookkeeping.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-bookkeeping.h"/>
+    <file name="znet-bookkeeping.c" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-bookkeeping.c"/>
+    <file name="hal-config.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/hal-config/hal-config.h"/>
+    <file name="mbedtls-config-generated.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/mbedtls-config-generated.h"/>
+    <file name="znet-token.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-token.h"/>
+    <file name="znet-mfg-token.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-mfg-token.h"/>
+    <file name="attribute-type.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/attribute-type.h"/>
+    <file name="attribute-size.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/attribute-size.h"/>
+    <file name="attribute-id.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/attribute-id.h"/>
+    <file name="att-storage.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/att-storage.h"/>
+    <file name="call-command-handler.c" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/call-command-handler.c"/>
+    <file name="call-command-handler.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/call-command-handler.h"/>
+    <file name="command-id.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/command-id.h"/>
+    <file name="cluster-id.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/cluster-id.h"/>
+    <file name="enums.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/enums.h"/>
+    <file name="print-cluster.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/print-cluster.h"/>
+    <file name="af-structs.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/af-structs.h"/>
+    <file name="ZB_UART_Test_tokens.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test_tokens.h"/>
+    <file name="ZB_UART_Test_endpoint_config.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test_endpoint_config.h"/>
+    <file name="af-gen-event.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/af-gen-event.h"/>
+    <file name="znet-cli.c" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-cli.c"/>
+    <file name="znet-cli.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/znet-cli.h"/>
+    <file name="ZB_UART_Test.h" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test.h"/>
+    <file name="afv2-bookkeeping.c" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/afv2-bookkeeping.c"/>
     <file name="ZB_UART_Test_callbacks.c" uri="studio:/sdk/ZB_UART_Test_callbacks.c"/>
+    <file name="ZB_UART_Test-postbuild.py" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test-postbuild.py"/>
+    <file name="ZB_UART_Test-prebuild.py" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test-prebuild.py"/>
+    <file name="ZB_UART_Test.mak" uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/ZB_UART_Test.mak"/>
   </folder>
   <file name="command-interpreter2.c" uri="studio:/sdk/protocol/zigbee/app/util/serial/command-interpreter2.c"/>
   <file name="ember-configuration.c" uri="studio:/sdk/protocol/zigbee/stack/config/ember-configuration.c"/>
@@ -15,36 +39,11 @@
   <file name="security-address-cache.c" uri="studio:/sdk/protocol/zigbee/app/util/security/security-address-cache.c"/>
   <file name="zigbee-device-common.c" uri="studio:/sdk/protocol/zigbee/app/util/zigbee-framework/zigbee-device-common.c"/>
   <file name="zigbee-device-library.c" uri="studio:/sdk/protocol/zigbee/app/util/zigbee-framework/zigbee-device-library.c"/>
-  <file name="znet-bookkeeping.h" uri="studio:/project/znet-bookkeeping.h"/>
-  <file name="znet-bookkeeping.c" uri="studio:/project/znet-bookkeeping.c"/>
   <file name="custom_efr32mg21a010f512im32.hwconf" uri="studio:/project/custom_efr32mg21a010f512im32.hwconf"/>
-  <file name="mbedtls-config-generated.h" uri="studio:/project/mbedtls-config-generated.h"/>
-  <file name="znet-token.h" uri="studio:/project/znet-token.h"/>
-  <file name="znet-mfg-token.h" uri="studio:/project/znet-mfg-token.h"/>
-  <file name="attribute-type.h" uri="studio:/project/attribute-type.h"/>
-  <file name="attribute-size.h" uri="studio:/project/attribute-size.h"/>
-  <file name="attribute-id.h" uri="studio:/project/attribute-id.h"/>
-  <file name="att-storage.h" uri="studio:/project/att-storage.h"/>
-  <file name="call-command-handler.c" uri="studio:/project/call-command-handler.c"/>
-  <file name="call-command-handler.h" uri="studio:/project/call-command-handler.h"/>
-  <file name="command-id.h" uri="studio:/project/command-id.h"/>
-  <file name="cluster-id.h" uri="studio:/project/cluster-id.h"/>
-  <file name="enums.h" uri="studio:/project/enums.h"/>
-  <file name="print-cluster.h" uri="studio:/project/print-cluster.h"/>
-  <file name="af-structs.h" uri="studio:/project/af-structs.h"/>
-  <file name="ZB_UART_Test_tokens.h" uri="studio:/project/ZB_UART_Test_tokens.h"/>
-  <file name="ZB_UART_Test_endpoint_config.h" uri="studio:/project/ZB_UART_Test_endpoint_config.h"/>
-  <file name="af-gen-event.h" uri="studio:/project/af-gen-event.h"/>
-  <file name="znet-cli.c" uri="studio:/project/znet-cli.c"/>
-  <file name="znet-cli.h" uri="studio:/project/znet-cli.h"/>
-  <file name="ZB_UART_Test.h" uri="studio:/project/ZB_UART_Test.h"/>
-  <file name="afv2-bookkeeping.c" uri="studio:/project/afv2-bookkeeping.c"/>
-  <file name="ZB_UART_Test-postbuild.py" uri="studio:/project/ZB_UART_Test-postbuild.py"/>
-  <file name="ZB_UART_Test-prebuild.py" uri="studio:/project/ZB_UART_Test-prebuild.py"/>
-  <file name="ZB_UART_Test.mak" uri="studio:/project/ZB_UART_Test.mak"/>
-  <includePath uri="studio:/project/"/>
-  <includePath uri="studio:/project/hal-config"/>
   <includePath uri="studio:/project/external-generated-files"/>
+  <includePath uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test"/>
+  <includePath uri="studio:/project/"/>
+  <includePath uri="file:/D:/Test_Code/KIT_Zigbee/ZB_UART_Test/hal-config"/>
   <includePath uri="studio:/sdk/"/>
   <includePath languageCompatibility="c asm" uri="studio:/sdk/protocol/zigbee/app/framework"/>
   <includePath languageCompatibility="c asm" uri="studio:/sdk/protocol/zigbee/"/>

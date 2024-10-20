@@ -65,7 +65,7 @@ systemTimerEventControl,systemTimerEventHandler
 lastArchitectureId=efr32~family[M]~series[2]~device_configuration[1]~performance[A]~radio[010]~flash[512K]~temp[I]~package[M]~pins[32]~!module+none+gcc
 featureLevel=1
 active=true
-lastHwConfFileUsed=PATH(GEN_RELATIVE):custom_efr32mg21a010f512im32.hwconf
+lastHwConfFileUsed=PATH(ISC_RELATIVE):custom_efr32mg21a010f512im32.hwconf
 }
 {setupId:information
 \{key:description

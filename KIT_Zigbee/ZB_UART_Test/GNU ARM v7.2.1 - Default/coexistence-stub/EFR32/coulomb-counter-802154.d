@@ -62,8 +62,8 @@ coexistence-stub/EFR32/coulomb-counter-802154.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\ember-configuration-defaults.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-static-struct.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\error.h \
@@ -74,7 +74,7 @@ coexistence-stub/EFR32/coulomb-counter-802154.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_prs.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_gpio.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_bus.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_gpio.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\radio\rail_lib\plugin\coexistence\common\coexistence.h \
@@ -206,9 +206,9 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h:
 
@@ -230,7 +230,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_bus.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h:
 

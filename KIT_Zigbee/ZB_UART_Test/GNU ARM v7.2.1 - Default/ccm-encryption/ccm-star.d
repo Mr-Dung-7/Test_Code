@@ -62,8 +62,8 @@ ccm-encryption/ccm-star.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\ember-configuration-defaults.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-static-struct.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\error.h \
@@ -196,9 +196,9 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h:
 

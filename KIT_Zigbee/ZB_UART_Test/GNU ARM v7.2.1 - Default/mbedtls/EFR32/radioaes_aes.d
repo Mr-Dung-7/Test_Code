@@ -57,7 +57,7 @@ mbedtls/EFR32/radioaes_aes.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_common.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_assert.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\sl_crypto\include\radioaes.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_se.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\plugin\plugin-common\mbedtls\config-device-acceleration-app.h \
@@ -183,7 +183,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\sl_crypto\include\radioaes.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h:
 

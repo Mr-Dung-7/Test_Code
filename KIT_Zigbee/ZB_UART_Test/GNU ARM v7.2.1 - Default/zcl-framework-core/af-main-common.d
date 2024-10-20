@@ -63,8 +63,8 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\ember-configuration-defaults.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-static-struct.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\error.h \
@@ -94,7 +94,7 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\mac-layer.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-random-api.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_se.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\plugin\plugin-common\mbedtls\config-device-acceleration-app.h \
@@ -118,7 +118,7 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\nvic-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\efr32/nvic-config-series2-config1.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\config\emlib_config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\ember-hal-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\plugin/antenna/antenna.h \
@@ -156,16 +156,16 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro/cortexm3/efm32/mfg-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing-series-2.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-stack.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-phy.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\zll\zll-token-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\gp\gp-token-config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af-types.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\scenes\scenes-tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\reporting\reporting-tokens.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro/bootloader-interface.h \
@@ -181,19 +181,19 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\event.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\print.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/debug-printing.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/debug-printing.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\time-util.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/af-structs.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-id.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/att-storage.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-type.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/call-command-handler.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/callback.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/af-structs.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-id.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/att-storage.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-type.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/call-command-handler.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/callback.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\network-steering\network-steering.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/client-command-macro.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/cluster-id.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/command-id.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/print-cluster.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/client-command-macro.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/cluster-id.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/command-id.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/print-cluster.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\client-api.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\cli\zcl-cli.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\common.h \
@@ -214,7 +214,7 @@ zcl-framework-core/af-main-common.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\util\zigbee-framework\zigbee-device-common.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\partner-link-key-exchange\partner-link-key-exchange.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\ota-storage-common\ota-storage.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-bookkeeping.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-bookkeeping.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af.h
 
 D:/SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/platform/base/hal/micro/cortexm3/compiler/gcc.h:
@@ -343,9 +343,9 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h:
 
@@ -405,7 +405,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h:
 
@@ -453,7 +453,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\config\emlib_config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test\hal-config/hal-config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\halconfig\inc\hal-config\hal-config-types.h:
 
@@ -529,7 +529,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\cortexm3\efm32\token-manufacturing-series-2.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-mfg-token.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\token-stack.h:
 
@@ -539,15 +539,15 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\gp\gp-token-config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-token.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\tokens.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af-types.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/enums.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_tokens.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\scenes\scenes-tokens.h:
 
@@ -579,31 +579,31 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\print.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/debug-printing.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/debug-printing.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\time-util.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/af-structs.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/af-structs.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-id.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-id.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/att-storage.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/att-storage.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-type.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/attribute-type.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/call-command-handler.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/call-command-handler.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/callback.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/callback.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\network-steering\network-steering.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/client-command-macro.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/client-command-macro.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/cluster-id.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/cluster-id.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/command-id.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/command-id.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/print-cluster.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/print-cluster.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\client-api.h:
 
@@ -645,6 +645,6 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\plugin\ota-storage-common\ota-storage.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-bookkeeping.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/znet-bookkeeping.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\include\af.h:

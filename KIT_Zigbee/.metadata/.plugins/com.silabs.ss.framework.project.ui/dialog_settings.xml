@@ -5,10 +5,11 @@
 		<item value="LINK" key="importOption"/>
 		<item value="false" key="showInternal"/>
 		<list key="fileLocationHistory">
+			<item value="D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test"/>
 			<item value="D:\Test_Code\KIT_Zigbee\Z3SED_Lab5"/>
 		</list>
 		<list key="fileLocations">
-			<item value="D:\Test_Code\KIT_Zigbee\Z3SED_Lab5"/>
+			<item value="D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test"/>
 		</list>
 	</section>
 </section>

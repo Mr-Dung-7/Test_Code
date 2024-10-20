@@ -63,8 +63,8 @@ ember-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-types.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\config\ember-configuration-defaults.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-static-struct.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\error.h \
@@ -94,7 +94,7 @@ ember-configuration.o: \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\mac-layer.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\stack\include\ember-random-api.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h \
- D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
+ D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\emlib\inc\em_se.h \
  d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\plugin\plugin-common\mbedtls\config-device-acceleration-app.h \
@@ -245,9 +245,9 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\util\config.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/ZB_UART_Test_endpoint_config.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\zigbee\app\framework\security\security-config.h:
 
@@ -307,7 +307,7 @@ d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\protocol\
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\platform\base\hal\micro\random.h:
 
-D:\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
+D:\GIT-RepoManager\Test_Code\KIT_Zigbee\ZB_UART_Test/mbedtls-config-generated.h:
 
 d:\siliconlabs\simplicitystudio\v4\developer\sdks\gecko_sdk_suite\v2.7\util\third_party\mbedtls\configs\config-device-acceleration.h:
 

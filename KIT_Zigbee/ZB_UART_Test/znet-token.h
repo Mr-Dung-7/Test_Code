@@ -7,13 +7,13 @@
 #endif
 
 // Token header for the token.properties.
-#include "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/util/tokens.h"
+#include "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/util/tokens.h"
 
 // Token header for the Scenes Server Cluster plugin.
-#include "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/scenes/scenes-tokens.h"
+#include "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/scenes/scenes-tokens.h"
 
 // Token header for the Reporting plugin.
-#include "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/reporting/reporting-tokens.h"
+#include "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/reporting/reporting-tokens.h"
 
 #ifdef CUSTOM_TOKEN_HEADER
   #include CUSTOM_TOKEN_HEADER

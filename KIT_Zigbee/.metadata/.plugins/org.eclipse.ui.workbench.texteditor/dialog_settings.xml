@@ -2,30 +2,37 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="USART_STATE_DATA_RECEIVED" key="selection"/>
+		<item value="void USER_Usart2RxHandle (USART_STATE_e UsartStateRx)" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="USART_STATE_DATA_RECEIVED"/>
-			<item value="RECEIVED"/>
-			<item value="USART_STATE_DATA_ERROR"/>
-			<item value="PAYLOAD_LENGTH_MAX"/>
-			<item value="e_USART_STATE"/>
-			<item value="UsartState"/>
-			<item value="pUsartStateCallback"/>
-			<item value="UsartStateCallback"/>
+			<item value="void USER_Usart2RxHandle (USART_STATE_e UsartStateRx)"/>
+			<item value="UsartStateRx"/>
+			<item value="void USER_Usart2RxHandle (USART_STATE_e UartStateRx)"/>
+			<item value="void USER_LdrUpdateValueLight (void)"/>
+			<item value="void USER_LD2410Handle (LD2410_Action_e action)"/>
+			<item value="void USER_ReceiveLeaveHandle (EmberNodeId nodeId, RECEIVE_CMD_ID_e receiveId)"/>
+			<item value="void USER_ReceiveOnOffClusterHandle (EmberAfClusterCommand* cmd)"/>
+			<item value="void USER_ButtonHoldHandle (uint8_t button, uint8_t holdCount)"/>
 		</list>
 		<list key="replacehistory">
-			<item value="g_IndexRxBuf"/>
+			<item value="USART_STATE_e"/>
+			<item value="RX_STATE_e"/>
+			<item value="USART_FRAME_TX_t"/>
+			<item value="LedAction_t"/>
+			<item value="LedDim_t"/>
+			<item value="LedToggle_t"/>
+			<item value="LedMode_e"/>
+			<item value="LedColor_e"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="380" key="DIALOG_HEIGHT"/>
-		<item value="974" key="DIALOG_X_ORIGIN"/>
-		<item value="118" key="DIALOG_Y_ORIGIN"/>
+		<item value="1045" key="DIALOG_X_ORIGIN"/>
+		<item value="138" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

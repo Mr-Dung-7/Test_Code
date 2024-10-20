@@ -35,6 +35,7 @@ efr32 \
 ember-minimal-printf \
 emdrv \
 emlib \
+external-generated-files \
 find-and-bind-target \
 groups-server \
 hal-library/EFR32 \

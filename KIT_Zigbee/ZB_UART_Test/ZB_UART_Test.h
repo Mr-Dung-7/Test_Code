@@ -360,10 +360,10 @@
 #define EMBER_AF_API_COEXISTENCE "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/platform/radio/rail_lib/plugin/coexistence/protocol/ieee802154/coexistence-802154.h"
 
 // API find-and-bind-target from Find and Bind Target plugin
-#define EMBER_AF_API_FIND_AND_BIND_TARGET "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/find-and-bind-target/find-and-bind-target.h"
+#define EMBER_AF_API_FIND_AND_BIND_TARGET "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/find-and-bind-target/find-and-bind-target.h"
 
 // API network-steering from Network Steering plugin
-#define EMBER_AF_API_NETWORK_STEERING "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/network-steering/network-steering.h"
+#define EMBER_AF_API_NETWORK_STEERING "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/network-steering/network-steering.h"
 
 // API nvm3 from NVM3 Library plugin
 #define EMBER_AF_API_NVM3 "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/platform/base/hal/plugin/nvm3/nvm3-token.h"
@@ -381,7 +381,7 @@
 #define EMBER_AF_API_UPDATE_TC_LINK_KEY "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/update-tc-link-key/update-tc-link-key.h"
 
 // API command-interpreter2 from ZCL Framework Core plugin
-#define EMBER_AF_API_COMMAND_INTERPRETER2 "../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/util/serial/command-interpreter2.h"
+#define EMBER_AF_API_COMMAND_INTERPRETER2 "../../../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/util/serial/command-interpreter2.h"
 
 
 // Custom macros

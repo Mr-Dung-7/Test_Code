@@ -728,7 +728,6 @@
     <properties key="template.toolchainCompatibility" value="com.silabs.ss.framework.project.core.noToolChain:0.0.0"/>
     <properties key="core.detected" value="true"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="template.allowsExistingLocation" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA Host.Empty znet application_2.7.10._1265011390.6.7.10._2081975675"/>
   </descriptors>
   <descriptors name="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA Host.XncpLed_2.7.10._1265011390.6.7.10._2081975675" label="XncpLed" description="EmberZNet: This is a demonstration of a UNIX HOST controlling an LED on an NCP." propertyScope="template.esf">
@@ -910,7 +909,6 @@
     <properties key="template.toolchainCompatibility" value="com.silabs.ss.framework.project.core.noToolChain:0.0.0 gcc iar"/>
     <properties key="core.detected" value="true"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="template.allowsExistingLocation" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA SoC.Empty znet application_2.7.10._1265011390.6.7.10._2081975675"/>
   </descriptors>
   <descriptors name="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA SoC.StandardizedRfTesting_2.7.10._1265011390.6.7.10._2081975675" label="StandardizedRfTesting" description="This is a pre-standardization implementation of Zigbee's RF testing standard. It utilizes the TIS (Total Isotropic Sensivity)/ TRP (Total Radiated Power) testing interfaces and is optional for Zigbee certifications." propertyScope="template.esf">
@@ -1001,7 +999,6 @@
     <properties key="template.toolchainCompatibility" value="com.silabs.ss.framework.project.core.noToolChain:0.0.0 gcc iar"/>
     <properties key="core.detected" value="true"/>
     <properties key="core.builtin" value="true"/>
-    <properties key="template.allowsExistingLocation" value="true"/>
     <properties key="CACHED_ID_STRING" value="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA SoC.Z3Light_2.7.10._1265011390.6.7.10._2081975675"/>
   </descriptors>
   <descriptors name="com.silabs.template.external.com.silabs.sdk.stack.super.znet.EmberZNet 6.7.10.0 GA SoC.Z3Switch_2.7.10._1265011390.6.7.10._2081975675" label="Z3Switch" description="This is a ZigBee 3.0 switch application using NVM3 as the persistent storage." propertyScope="template.esf">
