@@ -11,6 +11,7 @@
 #define EMBER_AF_GENERATED_EVENT_CODE \
   EmberEventControl emberAfIdentifyClusterServerTickCallbackControl1; \
   EmberEventControl emberAfIdentifyClusterServerTickCallbackControl2; \
+  EmberEventControl emberAfIdentifyClusterServerTickCallbackControl3; \
   extern EmberEventControl I2CSendDataEventControl; \
   extern EmberEventControl Ld2410DetectEventControl; \
   extern EmberEventControl LdrEventControl; \
@@ -75,12 +76,14 @@
   } \
   void emberAfIdentifyClusterServerTickCallbackWrapperFunction1(void) { clusterTickWrapper(&emberAfIdentifyClusterServerTickCallbackControl1, emberAfIdentifyClusterServerTickCallback, 1); } \
   void emberAfIdentifyClusterServerTickCallbackWrapperFunction2(void) { clusterTickWrapper(&emberAfIdentifyClusterServerTickCallbackControl2, emberAfIdentifyClusterServerTickCallback, 2); } \
+  void emberAfIdentifyClusterServerTickCallbackWrapperFunction3(void) { clusterTickWrapper(&emberAfIdentifyClusterServerTickCallbackControl3, emberAfIdentifyClusterServerTickCallback, 3); } \
 
 
 // EmberEventData structs used to populate the EmberEventData table
 #define EMBER_AF_GENERATED_EVENTS   \
   { &emberAfIdentifyClusterServerTickCallbackControl1, emberAfIdentifyClusterServerTickCallbackWrapperFunction1 }, \
   { &emberAfIdentifyClusterServerTickCallbackControl2, emberAfIdentifyClusterServerTickCallbackWrapperFunction2 }, \
+  { &emberAfIdentifyClusterServerTickCallbackControl3, emberAfIdentifyClusterServerTickCallbackWrapperFunction3 }, \
   { &I2CSendDataEventControl, I2CSendDataEventHandler }, \
   { &Ld2410DetectEventControl, Ld2410DetectEventHandler }, \
   { &LdrEventControl, LdrEventHandler }, \
@@ -109,11 +112,12 @@
 #define EMBER_AF_GENERATED_EVENT_STRINGS   \
   "Identify Cluster Server EP 1",  \
   "Identify Cluster Server EP 2",  \
+  "Identify Cluster Server EP 3",  \
   "I2 c send data event control",  \
   "Ld2410 detect event control",  \
   "Ldr event control",  \
   "Commissioning led event control",  \
-  "Event data",  \
+  "Delay event control",  \
   "Find and Bind Initiator Plugin CheckTargetResponses",  \
   "Interpan Plugin FragmentReceive",  \
   "Interpan Plugin FragmentTransmit",  \
@@ -135,11 +139,12 @@
 
 
 // The length of the event context table used to track and retrieve cluster events
-#define EMBER_AF_EVENT_CONTEXT_LENGTH 2
+#define EMBER_AF_EVENT_CONTEXT_LENGTH 3
 
 // EmberAfEventContext structs used to populate the EmberAfEventContext table
 #define EMBER_AF_GENERATED_EVENT_CONTEXT { 0x1, 0x3, false, EMBER_AF_LONG_POLL, EMBER_AF_OK_TO_SLEEP, &emberAfIdentifyClusterServerTickCallbackControl1}, \
-{ 0x2, 0x3, false, EMBER_AF_LONG_POLL, EMBER_AF_OK_TO_SLEEP, &emberAfIdentifyClusterServerTickCallbackControl2}
+{ 0x2, 0x3, false, EMBER_AF_LONG_POLL, EMBER_AF_OK_TO_SLEEP, &emberAfIdentifyClusterServerTickCallbackControl2}, \
+{ 0x3, 0x3, false, EMBER_AF_LONG_POLL, EMBER_AF_OK_TO_SLEEP, &emberAfIdentifyClusterServerTickCallbackControl3}
 
 
 #endif // __AF_GEN_EVENT__

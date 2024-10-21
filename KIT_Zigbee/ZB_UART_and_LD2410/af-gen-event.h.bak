@@ -15,6 +15,7 @@
   extern EmberEventControl Ld2410DetectEventControl; \
   extern EmberEventControl LdrEventControl; \
   extern EmberEventControl commissioningLedEventControl; \
+  extern EmberEventControl delayEventControl; \
   extern EmberEventControl emberAfPluginFindAndBindInitiatorCheckTargetResponsesEventControl; \
   extern EmberEventControl emberAfPluginInterpanFragmentReceiveEventControl; \
   extern EmberEventControl emberAfPluginInterpanFragmentTransmitEventControl; \
@@ -35,6 +36,7 @@
   extern void Ld2410DetectEventHandler(void); \
   extern void LdrEventHandler(void); \
   extern void commissioningLedEventHandler(void); \
+  extern void delayEventHandler(void); \
   extern void emberAfPluginFindAndBindInitiatorCheckTargetResponsesEventHandler(void); \
   extern void emberAfPluginInterpanFragmentReceiveEventHandler(void); \
   extern void emberAfPluginInterpanFragmentTransmitEventHandler(void); \
@@ -83,6 +85,7 @@
   { &Ld2410DetectEventControl, Ld2410DetectEventHandler }, \
   { &LdrEventControl, LdrEventHandler }, \
   { &commissioningLedEventControl, commissioningLedEventHandler }, \
+  { &delayEventControl, delayEventHandler }, \
   { &emberAfPluginFindAndBindInitiatorCheckTargetResponsesEventControl, emberAfPluginFindAndBindInitiatorCheckTargetResponsesEventHandler }, \
   { &emberAfPluginInterpanFragmentReceiveEventControl, emberAfPluginInterpanFragmentReceiveEventHandler }, \
   { &emberAfPluginInterpanFragmentTransmitEventControl, emberAfPluginInterpanFragmentTransmitEventHandler }, \
@@ -110,6 +113,7 @@
   "Ld2410 detect event control",  \
   "Ldr event control",  \
   "Commissioning led event control",  \
+  "Event data",  \
   "Find and Bind Initiator Plugin CheckTargetResponses",  \
   "Interpan Plugin FragmentReceive",  \
   "Interpan Plugin FragmentTransmit",  \

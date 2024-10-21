@@ -8,7 +8,7 @@
 
 
 // Fixed number of defined endpoints
-#define FIXED_ENDPOINT_COUNT (2)
+#define FIXED_ENDPOINT_COUNT (3)
 
 
 
@@ -46,12 +46,16 @@
     { 0x4002, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (ATTRIBUTE_MASK_WRITABLE), { (uint8_t*)0x0000 } }, /* 28 / On/off / off wait time*/\
     { 0x4003, ZCL_ENUM8_ATTRIBUTE_TYPE, 1, (ATTRIBUTE_MASK_WRITABLE|ATTRIBUTE_MASK_TOKENIZE), { (uint8_t*)0xFF } }, /* 29 / On/off / start up on off*/\
     { 0xFFFD, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0001 } }, /* 30 / On/off / cluster revision*/\
-    { 0x0000, ZCL_ENUM8_ATTRIBUTE_TYPE, 1, (0x00), { (uint8_t*)0x00 } }, /* 31 / IAS Zone / zone state*/\
-    { 0x0001, ZCL_ENUM16_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000 } }, /* 32 / IAS Zone / zone type*/\
-    { 0x0002, ZCL_BITMAP16_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000 } }, /* 33 / IAS Zone / zone status*/\
-    { 0x0010, ZCL_IEEE_ADDRESS_ATTRIBUTE_TYPE, 8, (ATTRIBUTE_MASK_WRITABLE), { NULL } }, /* 34 / IAS Zone / IAS CIE address*/\
-    { 0x0011, ZCL_INT8U_ATTRIBUTE_TYPE, 1, (0x00), { (uint8_t*)0xFF } }, /* 35 / IAS Zone / Zone ID*/\
-    { 0xFFFD, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0001 } }, /* 36 / IAS Zone / cluster revision*/\
+    { 0x0000, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000 } }, /* 31 / Illuminance Measurement / measured value*/\
+    { 0x0001, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000UL } }, /* 32 / Illuminance Measurement / min measured value*/\
+    { 0x0002, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000UL } }, /* 33 / Illuminance Measurement / max measured value*/\
+    { 0xFFFD, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0001 } }, /* 34 / Illuminance Measurement / cluster revision*/\
+    { 0x0000, ZCL_ENUM8_ATTRIBUTE_TYPE, 1, (0x00), { (uint8_t*)0x00 } }, /* 35 / IAS Zone / zone state*/\
+    { 0x0001, ZCL_ENUM16_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000 } }, /* 36 / IAS Zone / zone type*/\
+    { 0x0002, ZCL_BITMAP16_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0000 } }, /* 37 / IAS Zone / zone status*/\
+    { 0x0010, ZCL_IEEE_ADDRESS_ATTRIBUTE_TYPE, 8, (ATTRIBUTE_MASK_WRITABLE), { NULL } }, /* 38 / IAS Zone / IAS CIE address*/\
+    { 0x0011, ZCL_INT8U_ATTRIBUTE_TYPE, 1, (0x00), { (uint8_t*)0xFF } }, /* 39 / IAS Zone / Zone ID*/\
+    { 0xFFFD, ZCL_INT16U_ATTRIBUTE_TYPE, 2, (0x00), { (uint8_t*)0x0001 } }, /* 40 / IAS Zone / cluster revision*/\
   }
 
 
@@ -73,7 +77,11 @@ const EmberAfGenericClusterFunction emberAfFuncArrayOnOffClusterServer[] = { (Em
     { 0x0000, (EmberAfAttributeMetadata*)&(generatedAttributes[0]), 14, 0, (CLUSTER_MASK_SERVER), NULL,  },    \
     { 0x0003, (EmberAfAttributeMetadata*)&(generatedAttributes[14]), 1, 2, (CLUSTER_MASK_CLIENT), NULL,  },    \
     { 0x0003, (EmberAfAttributeMetadata*)&(generatedAttributes[15]), 2, 4, (CLUSTER_MASK_SERVER| CLUSTER_MASK_INIT_FUNCTION| CLUSTER_MASK_ATTRIBUTE_CHANGED_FUNCTION), emberAfFuncArrayIdentifyClusterServer, },    \
-    { 0x0500, (EmberAfAttributeMetadata*)&(generatedAttributes[31]), 6, 16, (CLUSTER_MASK_SERVER), NULL,  },    \
+    { 0x0500, (EmberAfAttributeMetadata*)&(generatedAttributes[35]), 6, 16, (CLUSTER_MASK_SERVER), NULL,  },    \
+    { 0x0000, (EmberAfAttributeMetadata*)&(generatedAttributes[0]), 14, 0, (CLUSTER_MASK_SERVER), NULL,  },    \
+    { 0x0003, (EmberAfAttributeMetadata*)&(generatedAttributes[14]), 1, 2, (CLUSTER_MASK_CLIENT), NULL,  },    \
+    { 0x0003, (EmberAfAttributeMetadata*)&(generatedAttributes[15]), 2, 4, (CLUSTER_MASK_SERVER| CLUSTER_MASK_INIT_FUNCTION| CLUSTER_MASK_ATTRIBUTE_CHANGED_FUNCTION), emberAfFuncArrayIdentifyClusterServer, },    \
+    { 0x0400, (EmberAfAttributeMetadata*)&(generatedAttributes[31]), 4, 8, (CLUSTER_MASK_SERVER), NULL,  },    \
   }
 
 
@@ -81,6 +89,7 @@ const EmberAfGenericClusterFunction emberAfFuncArrayOnOffClusterServer[] = { (Em
 #define GENERATED_ENDPOINT_TYPES {        \
     { (EmberAfCluster*)&(generatedClusters[0]), 5, 24 }, \
     { (EmberAfCluster*)&(generatedClusters[5]), 4, 22 }, \
+    { (EmberAfCluster*)&(generatedClusters[9]), 4, 14 }, \
   }
 
 
@@ -103,25 +112,25 @@ const EmberAfGenericClusterFunction emberAfFuncArrayOnOffClusterServer[] = { (Em
 #define ATTRIBUTE_SINGLETONS_SIZE (191)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE 46
+#define ATTRIBUTE_MAX_SIZE 60
 
 // Array of endpoints that are supported
-#define FIXED_ENDPOINT_ARRAY { 1, 2 }
+#define FIXED_ENDPOINT_ARRAY { 1, 2, 3 }
 
 // Array of profile ids
-#define FIXED_PROFILE_IDS { 260, 260 }
+#define FIXED_PROFILE_IDS { 260, 260, 260 }
 
 // Array of device ids
-#define FIXED_DEVICE_IDS { 256, 1026 }
+#define FIXED_DEVICE_IDS { 256, 1026, 262 }
 
 // Array of device versions
-#define FIXED_DEVICE_VERSIONS { 1, 1 }
+#define FIXED_DEVICE_VERSIONS { 1, 1, 1 }
 
 // Array of endpoint types supported on each endpoint
-#define FIXED_ENDPOINT_TYPES { 0, 1 }
+#define FIXED_ENDPOINT_TYPES { 0, 1, 2 }
 
 // Array of networks supported on each endpoint
-#define FIXED_NETWORKS { 0, 0 }
+#define FIXED_NETWORKS { 0, 0, 0 }
 
 
 #define EMBER_AF_GENERATED_PLUGIN_INIT_FUNCTION_DECLARATIONS \
@@ -203,6 +212,7 @@ const EmberAfGenericClusterFunction emberAfFuncArrayOnOffClusterServer[] = { (Em
 // Generated reporting configuration defaults
 #define EMBER_AF_GENERATED_REPORTING_CONFIG_DEFAULTS {\
   { EMBER_ZCL_REPORTING_DIRECTION_REPORTED, 1, 0x0006, 0x0000, CLUSTER_MASK_SERVER, 0x0000, 1, 65534, 0 }, \
+  { EMBER_ZCL_REPORTING_DIRECTION_REPORTED, 3, 0x0400, 0x0000, CLUSTER_MASK_SERVER, 0x0000, 1, 65534, 0 }, \
 }
-#define EMBER_AF_GENERATED_REPORTING_CONFIG_DEFAULTS_TABLE_SIZE (1)
+#define EMBER_AF_GENERATED_REPORTING_CONFIG_DEFAULTS_TABLE_SIZE (2)
 #endif // SILABS_AF_ENDPOINT_CONFIG

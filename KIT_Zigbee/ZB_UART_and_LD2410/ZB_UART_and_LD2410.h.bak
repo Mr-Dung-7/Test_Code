@@ -161,6 +161,7 @@
 #define EMBER_CALLBACK_EZSP_MAC_FILTER_MATCH_MESSAGE
 #define EZSP_APPLICATION_HAS_MAC_FILTER_MATCH_HANDLER
 #define EMBER_CALLBACK_INTERPAN_SEND_MESSAGE
+#define EMBER_CALLBACK_IDENTIFY_CLUSTER_IDENTIFY_QUERY_RESPONSE
 #define EMBER_CALLBACK_COUNTER_HANDLER
 #define EMBER_APPLICATION_HAS_COUNTER_HANDLER
 #define EMBER_CALLBACK_EZSP_COUNTER_ROLLOVER_HANDLER
@@ -237,6 +238,12 @@
 #define EMBER_AF_PLUGIN_END_DEVICE_SUPPORT_WAKE_TIMEOUT_BITMASK 24
 #define EMBER_AF_PLUGIN_END_DEVICE_SUPPORT_MAX_MISSED_POLLS 3
 #define EMBER_AF_REJOIN_ATTEMPTS_MAX 3
+
+// Use this macro to check if Find and Bind Initiator plugin is included
+#define EMBER_AF_PLUGIN_FIND_AND_BIND_INITIATOR
+// User options for plugin Find and Bind Initiator
+#define EMBER_AF_PLUGIN_FIND_AND_BIND_INITIATOR_TARGET_RESPONSES_COUNT 5
+#define EMBER_AF_PLUGIN_FIND_AND_BIND_INITIATOR_TARGET_RESPONSES_DELAY_MS MILLISECOND_TICKS_PER_SECOND*3
 
 // Use this macro to check if Find and Bind Target plugin is included
 #define EMBER_AF_PLUGIN_FIND_AND_BIND_TARGET
@@ -381,6 +388,9 @@
 
 // API coexistence from Radio Coexistence Stub plugin
 #define EMBER_AF_API_COEXISTENCE "../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/platform/radio/rail_lib/plugin/coexistence/protocol/ieee802154/coexistence-802154.h"
+
+// API find-and-bind-initiator from Find and Bind Initiator plugin
+#define EMBER_AF_API_FIND_AND_BIND_INITIATOR "../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/find-and-bind-initiator/find-and-bind-initiator.h"
 
 // API find-and-bind-target from Find and Bind Target plugin
 #define EMBER_AF_API_FIND_AND_BIND_TARGET "../../../../SiliconLabs/SimplicityStudio/v4/developer/sdks/gecko_sdk_suite/v2.7/protocol/zigbee/app/framework/plugin/find-and-bind-target/find-and-bind-target.h"
