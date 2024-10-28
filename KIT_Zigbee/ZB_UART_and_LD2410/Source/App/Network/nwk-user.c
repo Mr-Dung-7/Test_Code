@@ -53,6 +53,69 @@ void NETWORK_Init (pNetworkHandle callback)
 }
 
 /*
+ * @func:		NETWORK_CreateNetwork
+ *
+ * @brief:		The function creates a network
+ *
+ * @params:		None
+ *
+ * @retVal:		None
+ *
+ * @note:		None
+ */
+void NETWORK_CreateNetwork (void)
+{
+	emberAfPluginNetworkCreatorStart(true);
+
+	if(networkHandlerCallback != NULL)
+	{
+		networkHandlerCallback(NETWORK_CREATING);
+	}
+}
+
+/*
+ * @func:		NETWORK_OpenNetwork
+ *
+ * @brief:		The function opens the network
+ *
+ * @params:		None
+ *
+ * @retVal:		None
+ *
+ * @note:		None
+ */
+void NETWORK_OpenNetwork (void)
+{
+	emberAfPluginNetworkCreatorSecurityOpenNetwork();
+
+	if(networkHandlerCallback != NULL)
+	{
+		networkHandlerCallback(NETWORK_OPENING);
+	}
+}
+
+/*
+ * @func:		NETWORK_CloseNetwork
+ *
+ * @brief:		The function closes the network
+ *
+ * @params:		None
+ *
+ * @retVal:		None
+ *
+ * @note:		None
+ */
+void NETWORK_CloseNetwork (void)
+{
+	emberAfPluginNetworkCreatorSecurityCloseNetwork();
+
+	if(networkHandlerCallback != NULL)
+	{
+		networkHandlerCallback(NETWORK_CLOSING);
+	}
+}
+
+/*
  * @func:		NETWORK_FindAndJoin
  *
  * @brief:		The function performs a network scan 2 seconds

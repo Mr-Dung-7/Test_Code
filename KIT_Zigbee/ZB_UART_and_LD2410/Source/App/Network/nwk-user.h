@@ -23,6 +23,9 @@
 /******************************************************************************/
 typedef enum
 {
+	NETWORK_CREATING,
+	NETWORK_OPENING,
+	NETWORK_CLOSING,
 	NETWORK_JOIN_SUCCESS,
 	NETWORK_JOIN_FAIL,
 	NETWORK_HAS_PARENT,
@@ -39,6 +42,9 @@ typedef void (*pNetworkHandle)(NetworkState_e);
 /*                           FUNCTIONs  PROTOTYPE                             */
 /******************************************************************************/
 void NETWORK_Init (pNetworkHandle callback);
+void NETWORK_CreateNetwork (void);
+void NETWORK_OpenNetwork (void);
+void NETWORK_CloseNetwork (void);
 void NETWORK_FindAndJoin (void);
 void NETWORK_StopFindAndJoin (void);
 

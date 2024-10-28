@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="USER_LdrUpdateValueLight" key="selection"/>
+		<item value="emberSerialWriteData" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="USER_LdrUpdateValueLight"/>
-			<item value="void USER_Usart2RxHandle (USART_STATE_e UsartStateRx)"/>
-			<item value="UsartStateRx"/>
-			<item value="void USER_Usart2RxHandle (USART_STATE_e UartStateRx)"/>
-			<item value="void USER_LdrUpdateValueLight (void)"/>
-			<item value="void USER_LD2410Handle (LD2410_Action_e action)"/>
-			<item value="void USER_ReceiveLeaveHandle (EmberNodeId nodeId, RECEIVE_CMD_ID_e receiveId)"/>
-			<item value="void USER_ReceiveOnOffClusterHandle (EmberAfClusterCommand* cmd)"/>
+			<item value="emberSerialWriteData"/>
+			<item value="USER_ReceiveOnOffClusterHandle"/>
+			<item value="SEND_OnOffStateReport"/>
+			<item value="void NETWORK_StopFindAndJoin (void)"/>
+			<item value="void NETWORK_FindAndJoin (void)"/>
+			<item value="void NETWORK_Init (pNetworkHandle callback)"/>
+			<item value="pNetworkHandle"/>
+			<item value="NETWORK_CREATING"/>
 		</list>
 		<list key="replacehistory">
 			<item value="USART_STATE_e"/>

@@ -29,8 +29,8 @@
 #define CMD_ID_NETWORK_CLOSING			0x03
 #define CMD_ID_NETWORK_REPORT			0x04
 
-#define CMD_ID_DEVICE_JOIN_NETWORK		0x05
-#define CMD_ID_DEVICE_DELETE_NETWORK	0x06
+#define CMD_ID_DEVICE_DELETE_NETWORK	0x05
+#define CMD_ID_DEVICE_JOIN_NETWORK		0x06
 #define CMD_ID_DEVICE_LEAVE_NETWORK		0x07
 #define CMD_ID_DEVICE_CONNECTED			0x08
 #define CMD_ID_DEVICE_DISCONNECTED		0x09
@@ -95,6 +95,16 @@ void USART_SendPacket (EmberNodeId byNodeId,	\
 					   uint8_t byCmdType,		\
 					   uint8_t *pPayload,		\
 					   uint8_t byLengthPayload);
+uint8_t* GetFrame (void);
+void USART_DeviceConnected (EmberNodeId nodeId);
+void USART_DeviceDisconnected (EmberNodeId nodeId);
+void USART_CreateNetwork (void);
+void USART_OpenNetwork (void);
+void USART_CloseNetwork (void);
+void USART_DeleteNetwork (void);
+void USART_DeviceJoinNetwork (EmberNodeId nodeId, char *deviceType);
+void USART_DeviceLeaveNetwork (EmberNodeId nodeId, char *deviceType);
+
 
 /******************************************************************************/
 /*                               FUNCTIONs                              	  */

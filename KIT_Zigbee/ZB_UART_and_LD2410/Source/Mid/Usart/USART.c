@@ -51,8 +51,8 @@ uint8_t 	g_strRxBuffer[RX_BUFFER_SIZE] = {0};
  * @retval:		None
  *
  * @note:
- * 				+ usart2: Tx - PC01
- * 				+ usart2: Rx - PC02
+ * 				+ USART2: Tx - PC01
+ * 				+ USART2: Rx - PC02
  */
 void USART2_Init (pUsartStateCallback callback)
 {
@@ -137,7 +137,6 @@ void processSerialHandle (void)
  *
  * @note:		None
  */
-
 uint8_t PollRxBuff (uint8_t port)
 {
 	uint8_t 	byUartState = (uint8_t) USART_STATE_IDLE;
@@ -264,7 +263,160 @@ void USART_SendPacket (EmberNodeId byNodeId,	\
 	Frame[index++] = byCXOR;
 
 	emberSerialWriteData(COM_USART2, Frame, sizeof(Frame));
+}
 
+/*
+ * @func:  		GetFrame
+ *
+ * @brief:		The function get frame
+ *
+ * @param:		None
+ *
+ * @retval:		g_strRxBuffer
+ *
+ * @note:		None
+ */
+uint8_t* GetFrame (void)
+{
+	return g_strRxBuffer;
+}
+
+/*
+ * @func:		USART_DeviceConnected
+ *
+ * @brief:		The function sends the device's connection status message
+ *
+ * @param:		nodeId
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_DeviceConnected (EmberNodeId nodeId)
+{
+	USART_SendPacket(nodeId, 0x01, CMD_ID_DEVICE_CONNECTED, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_DeviceDisconnected
+ *
+ * @brief:		The function sends the device's disconnection status message
+ *
+ * @param:		nodeId
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_DeviceDisconnected (EmberNodeId nodeId)
+{
+	USART_SendPacket(nodeId, 0x01, CMD_ID_DEVICE_DISCONNECTED, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_CreateNetwork
+ *
+ * @brief:		The function sends the network creating message
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_CreateNetwork (void)
+{
+	USART_SendPacket(0x0000, 0x01, CMD_ID_NETWORK_CREATING, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_OpenNetwork
+ *
+ * @brief:		The function sends the network opening message
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_OpenNetwork (void)
+{
+	USART_SendPacket(0x0000, 0x01, CMD_ID_NETWORK_OPENING, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_CloseNetwork
+ *
+ * @brief:		The function sends the network closing message
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_CloseNetwork (void)
+{
+	USART_SendPacket(0x0000, 0x01, CMD_ID_NETWORK_CLOSING, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_DeleteNetwork
+ *
+ * @brief:		The function sends the message to remove the device from the network
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_DeleteNetwork (void)
+{
+	USART_SendPacket(0x0000, 0x01, CMD_ID_DEVICE_DELETE_NETWORK, CMD_TYPE_RES, NULL, 0);
+}
+
+/*
+ * @func:		USART_DeviceJoinNetwork
+ *
+ * @brief:		The function sends the device joining network message
+ *
+ * @param:		nodeId
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_DeviceJoinNetwork (EmberNodeId nodeId, char *deviceType)
+{
+	USART_SendPacket(nodeId,
+					 0x01,
+					 CMD_ID_DEVICE_JOIN_NETWORK,
+					 CMD_TYPE_RES,
+					 deviceType,
+					 sizeof(deviceType));
+}
+
+/*
+ * @func:		USART_DeviceLeaveNetwork
+ *
+ * @brief:		The function sends the device leaving network message
+ *
+ * @param:		None
+ *
+ * @retval:		None
+ *
+ * @note:		None
+ */
+void USART_DeviceLeaveNetwork (EmberNodeId nodeId, char *deviceType)
+{
+	USART_SendPacket(nodeId,
+					 0x01,
+					 CMD_ID_DEVICE_LEAVE_NETWORK,
+					 CMD_TYPE_RES,
+					 deviceType,
+					 sizeof(deviceType));
 }
 
 /* END FILE */
